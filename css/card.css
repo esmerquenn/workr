@@ -1,0 +1,9 @@
+
+.bg-overlay{
+    height: 0;
+    transition:  .4s;
+}
+.hover_card:hover .bg-overlay{
+    height: 100% !important;
+    bottom: 0 !important;
+}

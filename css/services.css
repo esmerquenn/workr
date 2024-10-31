@@ -1,0 +1,91 @@
+.services{
+    background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/services.jpg)center/cover;
+    height: 70vh;
+}
+.about{
+    background:linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/about_us.jpg)center/cover;
+    height: 70vh;
+}
+.contact{
+    background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/contact.jpg)center/cover;
+    height: 70vh;
+}
+.ferdi{
+    background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/ferd1.jpg)center/cover;
+    height: 80vh;
+}
+.korporativ{
+    background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/pexels-negativespace-34092.jpg)center/cover;
+    height: 70vh;
+}
+.gomruk{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/pexels-negativespace-34092.jpg)center/cover;
+  height: 70vh;
+}
+.avto{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/car1.jpg)center/cover;
+  height: 70vh;
+}
+.emlak{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/emlak.jpg)center/cover;
+  height: 70vh;
+}
+.kasko{
+  background: linear-gradient(rgba(1, 4, 66, 0.223), rgba(1, 4, 66, 0.223)), url(./../assets/img/red-car.jpg)center/cover;
+  height: 80vh;
+}
+.life{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/life-wall.jpg)center/cover;
+  height: 70vh;
+}
+
+.check{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/check.webp)center/cover;
+  height: 60vh;
+}
+.cerime{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/cerime.jpg)center/cover;
+  height: 70vh;
+}
+.travel{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/travellll.webp)60%/cover;
+  height: 80vh;
+}
+.title {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    position: absolute;
+    color: azure;
+    font-size: 3.5rem;
+    font-weight: bold;
+    animation: slideIn 1s ease-out forwards;
+   
+  }
+
+  
+  @keyframes slideIn {
+    0% {
+      bottom: 50%;
+      opacity: 0;
+    }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      bottom: 60%;
+      opacity: 1;
+    }
+  }
+
+
+  
+@media only screen and (max-width: 992px) {
+  .title {
+    bottom: 10px;
+    font-size: 1.8rem;
+  
+   
+  }
+}

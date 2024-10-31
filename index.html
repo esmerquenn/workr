@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Local Transport</title>
+    <link rel="shortcut icon" href="bg.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/slider.css" />
+    <link rel="stylesheet" href="css/owl.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <!--  <link rel="stylesheet" href="css/darkLight.css" />-->
+    <link rel="stylesheet" href="css/scrollToTop.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  </head>
+
+  <body class="font-roboto dark:bg-gray-900 text-black dark:text-white">
+    <header>
+      <nav class="fixed top-0 left-0 w-full z-20">
+        <div class="bg-[#fb3d27] text-white py-3 px-4 md:px-16 xxl:px-40 hidden md:flex justify-between items-center">
+          <div class="w-1/2">
+            <a target="_blank" class="text-sm mr-[6%]" href="https://maps.app.goo.gl/U2upLZTW6tzNGcbZ8">
+              <i class="fa-solid fa-location-dot text-xl pr-2"></i>Baku Azərbaycan</a
+            >
+            <a target="_blank" class="text-sm" href="tel:+994552344573">
+              <i class="fa-solid fa-phone-volume text-base pr-2"></i>+994 55 234 45 73</a
+            >
+          </div>
+          <div class="flex gap-4">
+            <i class="fa-brands fa-facebook-f text-xl"></i>
+            <i class="fa-brands fa-youtube text-xl"></i>
+            <i class="fa-brands fa-instagram text-xl"></i>
+          </div>
+        </div>
+        <div
+          class="bg-white h-[10vh] md:h-[12.7vh] flex items-center justify-between py-3 px-4 md:px-16 lg:px-8 xl:px-16 xxl:px-40"
+        >
+          <div class="text-center">
+            <a class="logo_img block" href="/"><img class="w-[50%] h-full object-cover" src="assets/img/bg.png" alt="birS" /></a>
+          </div>
+          <div class="flex justify-center items-center">
+            <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
+              <li class="py-3 lg:p-0 flex justify-between items-center w-full md:block">
+                <a class="capitalize tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300" href="/">Əsas səhifə</a>
+              </li>
+              <li class="py-3 lg:p-0">
+                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="">Haqqımızda</a>
+              </li>
+              <li class="py-3 lg:p-0">
+                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="">Xidmətlərimiz</a>
+              </li>
+              <li class="py-3 lg:p-0">
+                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="">Qalereya</a>
+              </li>
+              <li class="py-3 lg:p-0">
+                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="">Turlar</a>
+              </li>
+              <li class="py-3 lg:p-0">
+                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="">Əlaqə</a>
+              </li>
+              <li>
+                <div class="flex items-center lg:justify-center uppercase">
+                  <div
+                    x-data="{ open: false, selected: localStorage.getItem('selectedLanguage') || 'AZ' }"
+                    @click.away="open = false"
+                    class="relative"
+                  >
+                    <button
+                      @click="open = !open"
+                      class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
+                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                    >
+                      <span
+                        class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
+                        x-text="selected === '' ? 'AZ' : selected"
+                      ></span>
+                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
+                    </button>
+                    <div
+                      x-show="open"
+                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                      x-cloak
+                    >
+                      <ul
+                        class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                      >
+                        <li @click="selected = 'AZ'; open = false;" value="1" onclick="changeLanguage('az')">AZ</li>
+                        <li @click="selected = 'RU'; open = false;" value="2" onclick="changeLanguage('ru')">RU</li>
+                        <li @click="selected = 'EN'; open = false;" value="3" onclick="changeLanguage('en')">EN</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="hidden lg:block">
+                <div class="flex items-center justify-center uppercase">
+                  <div
+                    x-data="{ open: false, selected: localStorage.getItem('selectedCurrency') || 'AZN' }"
+                    @click.away="open = false"
+                    class="relative"
+                  >
+                    <button
+                      @click="open = !open"
+                      class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
+                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                    >
+                      <span
+                        class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
+                        x-text="selected === '' ? 'AZN' : selected"
+                      ></span>
+                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
+                    </button>
+                    <div
+                      x-show="open"
+                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                      x-cloak
+                    >
+                      <ul
+                        class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                      >
+                        <li @click="selected = 'AZN'; open = false;" value="1" onclick="changeCurrency('azn')">AZN</li>
+                        <li @click="selected = 'USD'; open = false;" value="2" onclick="changeCurrency('usd')">USD</li>
+                        <li @click="selected = 'EUR'; open = false;" value="3" onclick="changeCurrency('eur')">EUR</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="lg:hidden mr-3">
+              <div class="flex items-center justify-center uppercase">
+                <div
+                  x-data="{ open: false, selected: localStorage.getItem('selectedCurrency') || 'AZN' }"
+                  @click.away="open = false"
+                  class="relative"
+                >
+                  <button
+                    @click="open = !open"
+                    class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
+                    :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                  >
+                    <span
+                      class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
+                      x-text="selected === '' ? 'AZN' : selected"
+                    ></span>
+                    <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
+                  </button>
+                  <div
+                    x-show="open"
+                    class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                    x-cloak
+                  >
+                    <ul
+                      class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                    >
+                      <li @click="selected = 'AZN'; open = false;" value="1" onclick="changeCurrency('azn')">AZN</li>
+                      <li @click="selected = 'USD'; open = false;" value="2" onclick="changeCurrency('usd')">USD</li>
+                      <li @click="selected = 'EUR'; open = false;" value="3" onclick="changeCurrency('eur')">EUR</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="navigation-links lg:hidden">
+              <button onclick="closeDropdown()" class="mobile-menu nav_icon" aria-label="Toggle Mobile Menu Button">
+                <div class="bar-one"></div>
+                <div class="bar-two"></div>
+                <div class="bar-three"></div>
+              </button>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-1">
+            <div class="text-white font-roboto title text-center">
+              <h1 class="text-4xl tt font-bold mb-5">Sizin Yerli Transfer Xidmətiniz — Rahat və Güvənli Səyahətə Başlayın!</h1>
+              <p class="text-[20px] font-medium">
+                Sizin Yerli Transfer Xidmətiniz — Rahat və Güvənli Səyahətə Başlayın! LocalTransfer.com ilə şəhərdaxili və hava
+                limanı transferlərinizi asanlıqla planlaşdırın. Təcrübəli sürücülər və rahat avtomobillər ilə səyahətiniz hər
+                zaman təhlükəsiz və komfortlu olacaq. Birbaşa sifariş
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide slide-2">
+            <div class="text-white font-roboto title text-center">
+              <h1 class="text-4xl tt font-bold mb-5">Sizin Yerli Transfer Xidmətiniz — Rahat və Güvənli Səyahətə Başlayın!</h1>
+              <p class="text-[20px] font-medium">
+                Sizin Yerli Transfer Xidmətiniz — Rahat və Güvənli Səyahətə Başlayın! LocalTransfer.com ilə şəhərdaxili və hava
+                limanı transferlərinizi asanlıqla planlaşdırın. Təcrübəli sürücülər və rahat avtomobillər ilə səyahətiniz hər
+                zaman təhlükəsiz və komfortlu olacaq. Birbaşa sifariş
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide slide-3">
+            <div class="text-white font-roboto title text-center">
+              <h1 class="text-4xl tt font-bold mb-5">Sizin Yerli Transfer Xidmətiniz — Rahat və Güvənli Səyahətə Başlayın!</h1>
+              <p class="text-[20px] font-medium">
+                Sizin Yerli Transfer Xidmətiniz — Rahat və Güvənli Səyahətə Başlayın! LocalTransfer.com ilə şəhərdaxili və hava
+                limanı transferlərinizi asanlıqla planlaşdırın. Təcrübəli sürücülər və rahat avtomobillər ilə səyahətiniz hər
+                zaman təhlükəsiz və komfortlu olacaq. Birbaşa sifariş
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </header>
+    <main>
+      <section class="py-3 px-4 md:px-16 xxl:px-40 my-6">
+        <div class="flex flex-col lg:flex-row items-stretch gap-8 bg-white">
+          <div class="flex-1 space-y-4">
+            <h1 class="text-[18px] lg:text-2xl tt font-[500] lg:font-semibold text-gray-900">
+              LocalTransfer.com, rahat və etibarlı nəqliyyat həlləri təqdim edərək, istifadəçilərə səyahət prosesini asanlaşdırmaq
+              məqsədilə qurulmuşdur.
+            </h1>
+            <p class="text-gray-700 tt font-normal text-base lg:text-xl">
+              Peşəkar sürücülərimiz və geniş avtomobil parkımızla yüksək keyfiyyətli xidmət və fərdiləşdirilmiş marşrutlar təklif
+              edirik. Azərbaycanın gözəlliklərini kəşf etmək üçün bizimlə səyahət edin!
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
+                <i class="fa-regular fa-circle-check"></i> <span>Hava Limanı Transferləri</span>
+              </li>
+              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
+                <i class="fa-regular fa-circle-check"></i> <span>VIP köçürmələr</span>
+              </li>
+              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
+                <i class="fa-regular fa-circle-check"></i> <span>Sürücü ilə avtomobil icarəsi</span>
+              </li>
+              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
+                <i class="fa-regular fa-circle-check"></i> <span>İstəyinizə uyğun olaraq istənilən istiqamətə ekskursiyalar</span>
+              </li>
+              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
+                <i class="fa-regular fa-circle-check"></i> <span>Turlar</span>
+              </li>
+            </ul>
+            <button class="py-2 lg:py-4 px-6 bg-[#FB3D27] text-base text-white rounded-full mt-8">
+              Ətraflı öyrən <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Image Section -->
+          <div class="flex-1 grid grid-cols-2 gap-4">
+            <img
+              src="./assets/img/teklif.jpeg"
+              alt="Transfer image"
+              class="rounded-lg h-[360px] md:h-[500px] max-w-[180px] lg:max-w-[200px] xl:max-w-[250px] object-cover pb-10"
+            />
+            <img
+              src="./assets/img/aa.jpeg"
+              alt="Airport transfer"
+              class="rounded-lg h-[360px] md:h-[500px] max-w-[180px] lg:max-w-[200px] xl:max-w-[250px] object-cover mt-10 shadow-md"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="py-3 px-4 md:px-32 xxl:px-56 my-6">
+        <h2 class="tt font-medium text-2xl mb-6 text-center">Təklif etdiyimiz avtomobillərin siyahısı</h2>
+        <div class="owl-carousel carousel-1">
+          <div class="card p-5 bg-[#f9fafb] border rounded-md">
+            <img
+              src="./assets/img/vito.jpg"
+              alt="Mercedes Vito"
+              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+            />
+            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
+            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
+          </div>
+          <div class="card p-5 bg-[#f9fafb] border rounded-md">
+            <img
+              src="./assets/img/vito.jpg"
+              alt="Mercedes Vito"
+              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+            />
+            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
+            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
+          </div>
+          <div class="card p-5 bg-[#f9fafb] border rounded-md">
+            <img
+              src="./assets/img/vito.jpg"
+              alt="Mercedes Vito"
+              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+            />
+            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
+            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
+          </div>
+          <div class="card p-5 bg-[#f9fafb] border rounded-md">
+            <img
+              src="./assets/img/vito.jpg"
+              alt="Mercedes Vito"
+              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+            />
+            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
+            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
+          </div>
+        </div>
+      </section>
+      <section class="py-3 px-4 md:px-32 xxl:px-56 my-6">
+        <h2 class="tt font-medium text-2xl mb-6 text-center">Turlar</h2>
+        <div class="owl-carousel carousel-1">
+          <div class="card p-5 bg-[#f9fafb] border rounded-md">
+            <img
+              src="./assets/img/baku.webp"
+              alt="Mercedes Vito"
+              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+            />
+            <h3 class="text-2xl tt font-semibold">Bakı şəhər turu</h3>
+            <p class="text-xl tt font-medium text-gray-500">Paytaxt şəhərimizə tura gəl</p>
+          </div>
+          <div class="card p-5 bg-[#f9fafb] border rounded-md">
+            <img
+              src="./assets/img/baku.webp"
+              alt="Mercedes Vito"
+              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+            />
+            <h3 class="text-2xl tt font-semibold">Bakı şəhər turu</h3>
+            <p class="text-xl tt font-medium text-gray-500">Paytaxt şəhərimizə tura gəl</p>
+          </div>
+          <div class="card p-5 bg-[#f9fafb] border rounded-md">
+            <img
+              src="./assets/img/baku.webp"
+              alt="Mercedes Vito"
+              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+            />
+            <h3 class="text-2xl tt font-semibold">Bakı şəhər turu</h3>
+            <p class="text-xl tt font-medium text-gray-500">Paytaxt şəhərimizə tura gəl</p>
+          </div>
+          <div class="card p-5 bg-[#f9fafb] border rounded-md">
+            <img
+              src="./assets/img/baku.webp"
+              alt="Mercedes Vito"
+              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+            />
+            <h3 class="text-2xl tt font-semibold">Bakı şəhər turu</h3>
+            <p class="text-xl tt font-medium text-gray-500">Paytaxt şəhərimizə tura gəl</p>
+          </div>
+        </div>
+      </section>
+      <section class="py-3 px-4 md:px-16 xxl:px-40 my-6">
+        <h2 class="tt font-medium text-2xl mb-6 text-center">Partnyorlarımız</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-between">
+          <div class="h-20 bg-[#f9fafb] border rounded-md"></div>
+          <div class="h-20 bg-[#f9fafb] border rounded-md"></div>
+          <div class="h-20 bg-[#f9fafb] border rounded-md"></div>
+          <div class="h-20 bg-[#f9fafb] border rounded-md"></div>
+          <div class="h-20 bg-[#f9fafb] border rounded-md"></div>
+          <div class="h-20 bg-[#f9fafb] border rounded-md"></div>
+          <div class="h-20 bg-[#f9fafb] border rounded-md"></div>
+          <div class="h-20 bg-[#f9fafb] border rounded-md"></div>
+        </div>
+      </section>
+      <section class="py-3 px-4 md:px-16 xxl:px-40 my-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-between">
+          <div>
+            <h3 class="text-[#FB3D27] font-medium tt text-2xl md:text-4xl">
+              Xidmətlərimizi Azərbaycanın hər bir bölgəsində təqdim edirik.
+            </h3>
+          </div>
+          <div>
+            <h5 class="tt font-bold text-base md:text-2xl mb-2">Rahatlıq və Etibar</h5>
+            <p class="font-normal text-base md:text-xl">
+              Xidmətlərimiz sayəsində səyahətiniz zamanı maksimum rahatlıq əldə edəcəksiniz. Avtomobilinizi asanlıqla bron edin və
+              vaxtında təhvil alacağınıza əmin olun.
+            </p>
+          </div>
+          <div>
+            <h5 class="tt font-bold text-base md:text-2xl mb-2">Müştəri Məmnuniyyəti</h5>
+            <p class="font-normal text-base md:text-xl">
+              Nəqliyyat sahəsindəki zəngin təcrübəmiz sayəsində, çoxsaylı məmnun müştəri və tərəfdaşlara sahibik. Bu da, peşəkar
+              və keyfiyyətli xidmətlərimizin etibarlılığının ən yaxşı göstəricisidir.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="py-3 px-4 md:px-16 xxl:px-40 my-6">
+        <h2 class="tt font-medium text-2xl mb-6 text-center">Sizə təklif edə biləcəyimiz xidmətlər</h2>
+        <div class="text-right">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-between">
+            <div class="hover_card relative rounded-[4px] overflow-hidden">
+              <img class="w-full object-cover" src="./assets/img/teklif.jpeg" alt="" />
+              <div class="bg-overlay bg-[#00000053] absolute -bottom-10 w-full">
+                <div class="hover_button absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                  <button class="font-medium tt text-2xl py-2 px-3 bg-[#ffffffca] rounded-lg whitespace-nowrap">
+                    Hava Limanı transferi
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="hover_card relative rounded-[4px] overflow-hidden">
+              <img class="w-full object-cover" src="./assets/img/teklif.jpeg" alt="" />
+              <div class="bg-overlay bg-[#00000053] absolute -bottom-10 w-full">
+                <div class="hover_button absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                  <button class="font-medium tt text-2xl py-2 px-3 bg-[#ffffffca] rounded-lg whitespace-nowrap">
+                    Hava Limanı transferi
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="hover_card relative rounded-[4px] overflow-hidden">
+              <img class="w-full object-cover" src="./assets/img/teklif.jpeg" alt="" />
+              <div class="bg-overlay bg-[#00000053] absolute -bottom-10 w-full">
+                <div class="hover_button absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                  <button class="font-medium tt text-2xl py-2 px-3 bg-[#ffffffca] rounded-lg whitespace-nowrap">
+                    Hava Limanı transferi
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="py-4 px-6 bg-[#FB3D27] text-white rounded-full mt-8">
+            Ətraflı öyrən <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-6 md:py-24 px-4 md:px-16 xxl:px-40 bg-[#F9FAFB] dark:bg-gray-800 dark:text-gray-100">
+      <div class="flex flex-col md:flex-row gap-12 md:gap-0">
+        <div class="md:w-1/3 flex flex-col gap-6 md:gap-14">
+          <h4 class="tt text-xl">Əlaqə</h4>
+          <div class="flex flex-col justify-between gap-6">
+            <a target="_blank" class="text-base tt text-[#201D1D]" href="https://maps.app.goo.gl/U2upLZTW6tzNGcbZ8">
+              <i class="fa-solid fa-location-dot text-xl pr-2"></i>Baku Azərbaycan</a
+            >
+            <a target="_blank" class="text-base tt text-[#201D1D]" href="tel:+994552344573">
+              <i class="fa-solid fa-phone-volume text-base pr-2"></i>+994 55 234 45 73</a
+            >
+            <a target="_blank" class="text-base tt text-[#201D1D]" href="tel:+994552344573">
+              <i class="fa-solid fa-phone-volume text-base pr-2"></i>+994 55 234 45 73</a
+            >
+          </div>
+        </div>
+        <div class="md:w-2/3 flex flex-col justify-between gap-6 md:gap-14">
+          <h4 class="tt text-xl">Bizi xəritədə tapın</h4>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194472.76853012154!2d49.690149090376366!3d40.39473700796155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2zQmFrw7w!5e0!3m2!1str!2saz!4v1730363842435!5m2!1str!2saz"
+            width="100%"
+            height="220"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </footer>
+
+    <div class="progress-container">
+      <svg class="progress-ring w-15 h-15">
+        <circle
+          class="progress-ring__background stroke-current text-gray-300 dark:text-gray-600"
+          stroke-width="2"
+          fill="transparent"
+          r="28"
+          cx="30"
+          cy="30"
+        />
+        <circle class="progress-ring__circle stroke-[#02018e]" stroke-width="2" fill="transparent" r="28" cx="30" cy="30" />
+      </svg>
+      <i
+        class="fa-solid fa-arrow-up text-[24px] text-[#3A3D4F] py-[11px] px-[13px] rounded-[50%] bg-[#d3d3d4] absolute dark:bg-gray-600 dark:text-gray-300"
+      ></i>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.min.js"
+      integrity="sha512-ytM6hP1K9BkRTjUQZpxZKFjJ2TvE4QXaK7phVymsm7NimaI5H09TWWW6f2JMbonLp4ftYU6xfwQGoe3C8jta9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script src="js/translate.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- <script src="js/scrollToTop.js"></script> -->
+    <script src="js/swiper.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/nav.js"></script>
+    <!-- <script src="js/load.js"></script> -->
+    <script></script>
+  </body>
+</html>
