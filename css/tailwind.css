@@ -791,6 +791,10 @@ video {
   margin-top: 16vh;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1597,6 +1601,10 @@ video {
 
 .pt-\[17vh\] {
   padding-top: 17vh;
+}
+
+.pt-\[10vh\] {
+  padding-top: 10vh;
 }
 
 .text-left {
@@ -2406,6 +2414,10 @@ video {
 }
 
 @media (min-width: 992px) {
+  .lg\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -2520,6 +2532,15 @@ video {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .lg\:text-\[20px\] {
+    font-size: 20px;
   }
 
   .lg\:font-semibold {
