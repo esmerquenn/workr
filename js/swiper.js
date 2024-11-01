@@ -1,10 +1,10 @@
 var swiper = new Swiper(".mySwiper", {
-    speed: 500,
+    speed: 1000,
     parallax: true,
     loop: true,
     autoplay: {
-      delay: 3000, // Time in milliseconds
-      disableOnInteraction: false, // Continue autoplay after user interactions
+      delay: 6000, 
+      disableOnInteraction: false, 
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -15,10 +15,10 @@ var swiper = new Swiper(".mySwiper", {
         let slides = document.querySelectorAll(".swiper-slide-active .title");
         slides.forEach((slide) => {
           slide.style.animation = "none";
-          slide.offsetHeight; /* trigger reflow */
+          slide.offsetHeight; 
           setTimeout(function () {
             slide.style.animation = "slideIn 1s ease-out forwards";
-          }, 100); // Adjust delay as needed
+          }, 100);
         });
       },
     },

@@ -1,0 +1,8 @@
+.step {
+  color: #84909a;
+  background: #eaecee;
+}
+.step_active {
+  color: #fff;
+  background: #fb3d27;
+}
