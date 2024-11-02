@@ -9,6 +9,84 @@ const total_distance = document.getElementById("total_distance");
 const total_time = document.getElementById("total_time");
 const total_amount = document.getElementById("total_amount");
 const step_1_div = document.querySelector(".step_1_div");
+const teferruat3 = document.querySelector(".teferruat-3");
+const teferruat2 = document.querySelector(".teferruat-2");
+const teferruat1 = document.querySelector(".teferruat-1");
+const last_card = document.querySelector(".last_card");
+const amount1 = document.getElementById("total_amount-1");
+const amount2 = document.getElementById("total_amount-2");
+const amount3 = document.getElementById("total_amount-3");
+const surname = document.getElementById("surname_detail");
+const name = document.getElementById("name_detail");
+const email = document.getElementById("email_detail");
+const tel = document.getElementById("tel_detail");
+
+function tefe(marshrut, date, time, distance, total_time) {
+  let teferruat = `<h2 class="text-xl tt font-medium">Təfərrüatlar</h2>
+                <div class="space-y-3 text-sm">
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Servis tipi</p>
+                    <p class="font-normal text-sm">Standart qiymət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Transfer tipi</p>
+                    <p>Bir istiqamət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Marşrut</p>
+                    <p id="marshrut">Bakı - ${marshrut ? marshrut : "Şəhər mərkəzi"}</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
+                    <p id="date_time"> ${date ? date : 15 / 10 / 2024}- ${time ? time : "20:00"} </p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Ümumi məsafə</p>
+                    <p id="total_distance"> ${distance ? distance : "25.5 km"} </p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Ümumi vaxt</p>
+                    <p id="total_time"> ${total_time ? formatTime(total_time) : "0 saat 32 deq"}</p>
+                  </div>
+                </div>`;
+
+  teferruat3.innerHTML = `<div class="p-6 bg-[#f9fafb] border">
+                <div class="space-y-3 text-sm">
+                  <div class="py-1">
+                    <div id="map_little" class="w-full h-32 z-10 mb-0 pb-0"></div>
+                  </div>
+                  <h2 class="text-xl tt font-medium">Sürüş detalları</h2>
+
+                  <div class="border-b-2 border-[#84909A] pb-2 m-0">
+                    <p class="font-medium text-base tt">Servis tipi</p>
+                    <p class="font-normal text-sm">Standart qiymət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1 m-0">
+                    <p class="font-medium text-base tt">Transfer tipi</p>
+                    <p>Bir istiqamət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1">
+                    <p class="font-medium text-base tt">Marşrut</p>
+                    <p id="marshrut">Bakı - ${marshrut ? marshrut : "Şəhər mərkəzi"}</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-41">
+                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
+                    <p id="date_time">${date ? date : 15 / 10 / 2024}- ${time ? time : "20:00"}</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1">
+                    <p class="font-medium text-base tt">Ümumi məsafə</p>
+                    <p id="total_distance">${distance ? distance : "25.5 km"}</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1">
+                    <p class="font-medium text-base tt">Ümumi vaxt</p>
+                    <p id="total_time">${total_time ? formatTime(total_time) : "0 saat 32 deq"}</p>
+                  </div>
+                </div>
+              </div>`;
+  teferruat2.innerHTML = teferruat;
+  teferruat1.innerHTML = teferruat;
+}
+tefe();
 let currentStep = 0;
 
 dir_next.onclick = function () {
@@ -80,11 +158,44 @@ function updateStep() {
   steps.forEach((item, index) => item.classList.toggle("step_active", index === currentStep));
   order_step.forEach((item) => (item.style.display = "none"));
   order_step.forEach((item, index) => item.classList.toggle("order_active", index === currentStep));
-  marshrut.innerHTML = `Bakı - ${last_personal_info.marshrut}`;
-  total_distance.innerHTML = last_personal_info.total_distance;
-  total_time.innerHTML = formatTime(last_personal_info.total_time);
-  total_amount.innerHTML = last_personal_info.total_amount;
-  date_time.innerHTML = `${last_personal_info.pickup_date} - ${last_personal_info.pickup_time}`;
+  tefe(
+    last_personal_info.marshrut,
+    last_personal_info.pickup_date,
+    last_personal_info.pickup_time,
+    last_personal_info.total_distance,
+    last_personal_info.total_time
+  );
+  let amount = `${last_personal_info.total_amount} ₼`;
+  amount1.innerHTML = amount;
+  amount2.innerHTML = amount;
+  amount3.innerHTML = amount;
+  console.log(amount3.innerHTML);
+  name.innerHTML = last_personal_info.name;
+  surname.innerHTML = last_personal_info.surname;
+  email.innerHTML = last_personal_info.email;
+  tel.innerHTML = last_personal_info.phone;
+  lastCardChoose(last_personal_info.vehicle)
+}
+
+function lastCardChoose(car) {
+  last_card.innerHTML = `
+  <img
+  src=${car.img}
+  alt="Mercedes Vito"
+  class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+/>
+<h3 class="text-2xl tt font-semibold">${car.vehicle_name}</h3>
+<div class="flex justify-between items-center my-3">
+  <span>
+    <span class="text-base text-[#84909A] font-medium pr-4 border-r border-[#84909a]"
+      ><i class="fa-solid fa-user-group text-xl mr-1"></i> ${last_personal_info.passenger}
+    </span>
+    <span class="text-base text-[#84909A] font-medium px-4"
+      ><i class="fa-solid fa-briefcase text-xl mr-1"></i> ${last_personal_info.bag}
+    </span>
+  </span>
+  <span class="text-xl font-medium tt text-[#84909a]">${car.price} ₼ </span>
+</div>`;
 }
 
 function formatTime(minutes) {

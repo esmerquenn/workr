@@ -5,14 +5,14 @@ function showCards() {
   cars.forEach(
     (item) =>
       (my_cards.innerHTML += `<div class="card p-5 bg-[#f9fafb] border rounded-md">
-                  <img
-                    src=${item.img}
-                    alt="Mercedes Vito"
-                    class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-                  />
-                  <h3 class="text-2xl tt font-semibold">${item.vehicle_name}</h3>
-                  <p class="text-xl tt font-medium text-gray-500">${item.vehicle_type}</p>
-                </div>`)
+        <img
+          src=${item.img}
+          alt="Mercedes Vito"
+          class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+        />
+        <h3 class="text-2xl tt font-semibold">${item.vehicle_name}</h3>
+        <p class="text-xl tt font-medium text-gray-500">${item.vehicle_type}</p>
+      </div>`)
   );
 }
 function showvideos() {

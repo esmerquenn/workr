@@ -1,5 +1,5 @@
-// STEP 2
 const vehicle_box = document.querySelector(".vehicle_box");
+
 function updateInfo(key, value) {
   last_personal_info[key] = value;
   console.log(`${key} güncellendi:`, value, last_personal_info);
@@ -22,7 +22,7 @@ cars.forEach((car) => {
             ><i class="fa-solid fa-briefcase text-xl mr-1"></i> 3
           </span>
         </span>
-        <span class="text-xl font-medium tt text-[#84909a]">35 ₼ </span>
+        <span class="text-xl font-medium tt text-[#84909a]">${car.price} ₼ </span>
       </div>
       <button
         onclick="getCarInfo('${car.vehicle_id}')"
@@ -50,4 +50,43 @@ function getCarInfo(id) {
   last_personal_info.vehicle = find_data;
   last_personal_info.vehicle_id = find_data.vehicle_id;
   last_personal_info.total_amount = find_data.price * +last_personal_info.passenger;
+}
+
+function updatePersonalInfo(field, value) {
+  const isValid = validateInput(field, value);
+
+  if (isValid) {
+    last_personal_info[field] = value;
+    console.log(`${field} güncellendi: ${value}`);
+  }
+}
+
+function validateInput(field, value) {
+  let isValid = false;
+  let errorMessage = "";
+
+  switch (field) {
+    case "name":
+    case "surname":
+      isValid = /^[A-Za-z]+$/.test(value);
+      errorMessage = isValid ? "" : "Yalnız harfler kullanılabilir.";
+      break;
+    case "email":
+      isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      errorMessage = isValid ? "" : "Geçerli bir e-posta adresi girin.";
+      break;
+    case "phone":
+      isValid = /^\d{10}$/.test(value);
+      errorMessage = isValid ? "" : "Telefon numarası 10 haneli olmalıdır.";
+      break;
+    case "message":
+      isValid = true;
+      break;
+  }
+
+  const errorElement = document.getElementById(`${field}-error`);
+  if (errorElement) {
+    errorElement.textContent = errorMessage;
+  }
+  return isValid;
 }

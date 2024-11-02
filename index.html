@@ -358,38 +358,10 @@
           </div>
           <div id="order" class="order_step hidden w-full bg-white py-4 flex-wrap md:flex-nowrap gap-4">
             <div class="w-full md:w-1/4 order-2 md:order-1">
-              <div class="p-6 bg-[#f9fafb] border">
-                <h2 class="text-xl tt font-medium">Təfərrüatlar</h2>
-                <div class="space-y-3 text-sm">
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Servis tipi</p>
-                    <p class="font-normal text-sm">Standart qiymət</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Transfer tipi</p>
-                    <p>Bir istiqamət</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Marşrut</p>
-                    <p id="marshrut">Hava limanı - Şəhər mərkəzi</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
-                    <p id="date_time">15/10/2024 20:00</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Ümumi məsafə</p>
-                    <p id="total_distance">25.5 km</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Ümumi vaxt</p>
-                    <p id="total_time">0 saat 32 dəq</p>
-                  </div>
-                </div>
-              </div>
+              <div class="teferruat-1 p-6 bg-[#f9fafb] border"></div>
               <div class="mt-10 border-t border-gray-300 pt-10 flex justify-between items-center">
                 <p class="text-xl font-medium">Ümumi</p>
-                <p id="total_amount" class="text-xl font-medium">00.00 ₼</p>
+                <p id="total_amount-1" class="text-xl font-medium">00.00 ₼</p>
               </div>
             </div>
 
@@ -436,56 +408,16 @@
                     <option value="Minivan">Mini van</option>
                   </select>
                 </div>
-                <!-- <div class="bg-white border pr-2">
-                  <label class="block text-base tt px-4 pt-4 font-medium">Tip</label>
-                  <select name="" id="" class="w-full p-2 focus:outline-none">
-                    <option value="">Bütün avtomobillər</option>
-                    <option value="">Bütün avtomobillər</option>
-                    <option value="">Bütün avtomobillər</option>
-                  </select>
-                </div> -->
               </div>
-
-              <!-- Vehicle Cards -->
-              <div class="vehicle_box grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Burada araç kartları JavaScript ile eklenecek -->
-              </div>
+              <div class="vehicle_box grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
           </div>
           <div id="order" class="order_step hidden w-full bg-white py-4 flex-wrap md:flex-nowrap gap-4">
             <div class="w-full md:w-1/4 order-2 md:order-1">
-              <div class="p-6 bg-[#f9fafb] border">
-                <h2 class="text-xl tt font-medium">Təfərrüatlar</h2>
-                <div class="space-y-3 text-sm">
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Servis tipi</p>
-                    <p class="font-normal text-sm">Standart qiymət</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Transfer tipi</p>
-                    <p>Bir istiqamət</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Marşrut</p>
-                    <p id="marshrut">Hava limanı - Şəhər mərkəzi</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
-                    <p id="date_time">15/10/2024 20:00</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Ümumi məsafə</p>
-                    <p id="total_distance">25.5 km</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-2">
-                    <p class="font-medium text-base tt">Ümumi vaxt</p>
-                    <p id="total_time">0 saat 32 dəq</p>
-                  </div>
-                </div>
-              </div>
+              <div class="teferruat-2 p-6 bg-[#f9fafb] border"></div>
               <div class="mt-10 border-t border-gray-300 pt-10 flex justify-between items-center">
                 <p class="text-xl font-medium">Ümumi</p>
-                <p id="total_amount" class="text-xl font-medium">00.00 ₼</p>
+                <p id="total_amount-2" class="text-xl font-medium">00.00 ₼</p>
               </div>
             </div>
             <div class="w-full md:w-2/3 xl:w-3/4 order-1 md:order-2">
@@ -497,17 +429,38 @@
                   <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="bg-white border">
                       <label for="name" class="block text-base tt px-4 pt-4 font-medium">Ad</label>
-                      <input type="text" id="name" name="name" class="w-full p-2 focus:outline-none" />
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="w-full p-2 focus:outline-none"
+                        onchange="updatePersonalInfo('name', this.value)"
+                      />
+                      <small class="error-message text-red-500" id="name-error"></small>
                     </div>
                     <div class="bg-white border">
                       <label for="surname" class="block text-base tt px-4 pt-4 font-medium">Soyad</label>
-                      <input type="text" id="surname" name="surname" class="w-full p-2 focus:outline-none" />
+                      <input
+                        type="text"
+                        id="surname"
+                        name="surname"
+                        class="w-full p-2 focus:outline-none"
+                        onchange="updatePersonalInfo('surname', this.value)"
+                      />
+                      <small class="error-message text-red-500" id="surname-error"></small>
                     </div>
                   </div>
                   <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="bg-white border">
                       <label for="email" class="block text-base tt px-4 pt-4 font-medium">E-mail ünvanı</label>
-                      <input type="email" id="email" name="email" class="w-full p-2 focus:outline-none" />
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="w-full p-2 focus:outline-none"
+                        onchange="updatePersonalInfo('email', this.value)"
+                      />
+                      <small class="error-message text-red-500" id="email-error"></small>
                     </div>
                     <div class="bg-white border">
                       <label for="phone" class="block text-base tt px-4 pt-4 font-medium">Telefon</label>
@@ -517,12 +470,20 @@
                         name="phone"
                         placeholder="+994 00 123 45 67"
                         class="w-full p-2 focus:outline-none"
+                        onchange="updatePersonalInfo('phone', this.value)"
                       />
+                      <small class="error-message text-red-500" id="phone-error"></small>
                     </div>
                   </div>
                   <div class="bg-white border">
                     <label for="message" class="block text-base tt px-4 pt-4 font-medium">Sifariş üçün əlavə qeydlər</label>
-                    <textarea id="message" name="message" rows="4" class="w-full border-0 p-2 focus:outline-none"></textarea>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      class="w-full border-0 p-2 focus:outline-none"
+                      onchange="updatePersonalInfo('message', this.value)"
+                    ></textarea>
                   </div>
                 </form>
               </div>
@@ -536,82 +497,30 @@
 
                   <div class="border-b-2 border-[#84909A] pb-2 m-0">
                     <p class="font-medium text-base tt">Ad</p>
-                    <p class="font-normal text-sm">Yusif</p>
+                    <p id="name_detail" class="font-normal text-sm">Yusif</p>
                   </div>
                   <div class="border-b-2 border-[#84909A] py-1 m-0">
                     <p class="font-medium text-base tt">Soyad</p>
-                    <p>Rzayev</p>
+                    <p id="surname_detail" class="font-normal text-sm">Rzayev</p>
                   </div>
                   <div class="border-b-2 border-[#84909A] py-1">
                     <p class="font-medium text-base tt">E-mail ünvanı</p>
-                    <p>user"gmail.com</p>
+                    <p id="email_detail" class="font-normal text-sm">user"gmail.com</p>
                   </div>
                   <div class="border-b-2 border-[#84909A] py-41">
                     <p class="font-medium text-base tt">Telefon</p>
-                    <p>+994503344549</p>
+                    <p id="tel_detail" class="font-normal text-sm">+994503344549</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/4 order-2 md:order-1">
-              <div class="p-6 bg-[#f9fafb] border">
-                <div class="space-y-3 text-sm">
-                  <div class="py-1">
-                    <div id="map_little" class="w-full h-32 z-10 mb-0 pb-0"></div>
-                  </div>
-                  <h2 class="text-xl tt font-medium">Sürüş detalları</h2>
-
-                  <div class="border-b-2 border-[#84909A] pb-2 m-0">
-                    <p class="font-medium text-base tt">Servis tipi</p>
-                    <p class="font-normal text-sm">Standart qiymət</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-1 m-0">
-                    <p class="font-medium text-base tt">Transfer tipi</p>
-                    <p>Bir istiqamət</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-1">
-                    <p class="font-medium text-base tt">Marşrut</p>
-                    <p id="marshrut">Hava limanı - Şəhər mərkəzi</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-41">
-                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
-                    <p id="date_time">15/10/2024 20:00</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-1">
-                    <p class="font-medium text-base tt">Ümumi məsafə</p>
-                    <p id="total_distance">25.5 km</p>
-                  </div>
-                  <div class="border-b-2 border-[#84909A] py-1">
-                    <p class="font-medium text-base tt">Ümumi vaxt</p>
-                    <p id="total_time">0 saat 32 dəq</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="teferruat-3 w-full md:w-1/4 order-2 md:order-1"></div>
 
             <div class="md:w-2/4 order-1 md:order-2">
-              <div class="card p-5 bg-[#f9fafb] border">
-                <img
-                  src="./assets/img/vito.jpg"
-                  alt="Mercedes Vito"
-                  class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-                />
-                <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-                <div class="flex justify-between items-center my-3">
-                  <span>
-                    <span class="text-base text-[#84909A] font-medium pr-4 border-r border-[#84909a]"
-                      ><i class="fa-solid fa-user-group text-xl mr-1"></i> 3
-                    </span>
-                    <span class="text-base text-[#84909A] font-medium px-4"
-                      ><i class="fa-solid fa-briefcase text-xl mr-1"></i> 3
-                    </span>
-                  </span>
-                  <span class="text-xl font-medium tt text-[#84909a]">35 ₼ </span>
-                </div>
-              </div>
+              <div class="last_card card p-5 bg-[#f9fafb] border"></div>
               <div class="mt-10 border-t border-gray-300 pt-10 flex justify-between items-center">
                 <p class="text-xl font-medium">Ümumi</p>
-                <p class="text-xl font-medium">00.00 ₼</p>
+                <p id="total_amount-3" class="text-xl font-medium">00.00 ₼</p>
               </div>
             </div>
           </div>
@@ -710,9 +619,7 @@
       </section>
       <section class="py-3 px-4 md:px-32 xxl:px-56 my-6">
         <h2 class="tt font-medium text-2xl mb-6 text-center">Təklif etdiyimiz avtomobillərin siyahısı</h2>
-        <div class="owl-carousel carousel-1">
-          
-        </div>
+        <div class="owl-carousel carousel-1"></div>
       </section>
       <section class="py-3 px-4 md:px-32 xxl:px-56 my-6">
         <h2 class="tt font-medium text-2xl mb-6 text-center">Turlar</h2>
@@ -864,7 +771,6 @@
       </div>
     </footer>
 
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -895,6 +801,6 @@
     <script src="js/map.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/step2.js"></script>
-    <script src="js/step4.js"></script>
+    <script src="js/step3.js"></script>
   </body>
 </html>

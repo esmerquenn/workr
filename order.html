@@ -9,17 +9,8 @@
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/step.css" />
-    <link rel="stylesheet" href="css/slider.css" />
-    <link rel="stylesheet" href="css/owl.css" />
-    <link rel="stylesheet" href="css/card.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <!--  <link rel="stylesheet" href="css/darkLight.css" />-->
-    <link rel="stylesheet" href="css/scrollToTop.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -27,21 +18,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   </head>
 
   <body class="font-roboto dark:bg-gray-900 text-black dark:text-white">
@@ -220,7 +196,42 @@
           </span>
         </div>
 
-        <div class="w-full bg-white py-4 flex flex-wrap md:flex-nowrap gap-4">
+        <div id="order" class="order_step hidden w-full bg-white py-4 flex-wrap md:flex-nowrap gap-4">
+          <div class="w-full md:w-1/4 order-2 md:order-1">
+            <div class="p-6 bg-[#f9fafb] border">
+              <div class="space-y-3 text-sm">
+                <h2 class="text-xl tt font-medium">Sürüş detalları</h2>
+
+                <div class="border-b-2 border-[#84909A] pb-2 m-0">
+                  <p class="font-medium text-base tt">Ad</p>
+                  <p id="name_detail" class="font-normal text-sm">Yusif</p>
+                </div>
+                <div class="border-b-2 border-[#84909A] py-1 m-0">
+                  <p class="font-medium text-base tt">Soyad</p>
+                  <p id="surname_detail" class="font-normal text-sm">Rzayev</p>
+                </div>
+                <div class="border-b-2 border-[#84909A] py-1">
+                  <p class="font-medium text-base tt">E-mail ünvanı</p>
+                  <p id="email_detail" class="font-normal text-sm">user"gmail.com</p>
+                </div>
+                <div class="border-b-2 border-[#84909A] py-41">
+                  <p class="font-medium text-base tt">Telefon</p>
+                  <p id="tel_detail" class="font-normal text-sm">+994503344549</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="teferruat-3 w-full md:w-1/4 order-2 md:order-1"></div>
+
+          <div class="md:w-2/4 order-1 md:order-2">
+            <div class="last_card card p-5 bg-[#f9fafb] border"></div>
+            <div class="mt-10 border-t border-gray-300 pt-10 flex justify-between items-center">
+              <p class="text-xl font-medium">Ümumi</p>
+              <p id="total_amount-3" class="text-xl font-medium">00.00 ₼</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="w-full bg-white py-4 flex flex-wrap md:flex-nowrap gap-4">
           <div class="w-full md:w-1/4 order-2 md:order-1">
             <div class="p-6 bg-[#f9fafb] border">
               <div class="space-y-3 text-sm">
@@ -290,7 +301,7 @@
           </div>
 
           <div class="md:w-2/4 order-1 md:order-2">
-            <div class="card p-5 bg-[#f9fafb] border ">
+            <div class="card p-5 bg-[#f9fafb] border">
               <img
                 src="./assets/img/vito.jpg"
                 alt="Mercedes Vito"
@@ -314,7 +325,7 @@
               <p class="text-xl font-medium">00.00 ₼</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
     </main>
 
@@ -349,33 +360,17 @@
       </div>
     </footer>
 
-    <div class="progress-container">
-      <svg class="progress-ring w-15 h-15">
-        <circle
-          class="progress-ring__background stroke-current text-gray-300 dark:text-gray-600"
-          stroke-width="2"
-          fill="transparent"
-          r="28"
-          cx="30"
-          cy="30"
-        />
-        <circle class="progress-ring__circle stroke-[#02018e]" stroke-width="2" fill="transparent" r="28" cx="30" cy="30" />
-      </svg>
-      <i
-        class="fa-solid fa-arrow-up text-[24px] text-[#3A3D4F] py-[11px] px-[13px] rounded-[50%] bg-[#d3d3d4] absolute dark:bg-gray-600 dark:text-gray-300"
-      ></i>
-    </div>
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.min.js"
       integrity="sha512-ytM6hP1K9BkRTjUQZpxZKFjJ2TvE4QXaK7phVymsm7NimaI5H09TWWW6f2JMbonLp4ftYU6xfwQGoe3C8jta9A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/swiper.js"></script>
-    <script src="js/owl.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/stepper.js"></script>
+    <script src="js/step2.js"></script>
+    <script src="js/step3.js"></script>
     <script src="js/nav.js"></script>
   </body>
 </html>

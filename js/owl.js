@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let carousel_1 = document.querySelector(".carousel-1");
 
-  cars.forEach((item) => {
+  cars?.forEach((item) => {
     carousel_1.innerHTML += `
       <div class="card p-5 bg-[#f9fafb] border rounded-md">
         <img
