@@ -6,3 +6,10 @@
   color: #fff !important;
   background: #fb3d27 !important;
 }
+.order_active{
+  display: flex !important;
+}
+.btn_active{
+  background: #fb3d27;
+  color: #fff;
+}

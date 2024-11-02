@@ -833,6 +833,18 @@ video {
   height: 100%;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
 .min-h-\[15vh\] {
   min-height: 15vh;
 }
@@ -1230,6 +1242,10 @@ video {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-3 {
@@ -1688,6 +1704,10 @@ video {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:grid {
+    display: grid;
   }
 
   .md\:h-\[12\.7vh\] {

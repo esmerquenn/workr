@@ -14,10 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/scrollToTop.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -25,21 +22,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   </head>
 
   <body class="font-roboto dark:bg-gray-900 text-black dark:text-white">
@@ -209,132 +191,20 @@
       </div>
     </header>
     <main>
-      <!-- <section class="py-3 px-4 md:px-16 xxl:px-40 my-6">
-        <div class="flex flex-col lg:flex-row items-stretch gap-8 bg-white">
-          <div class="flex-1 space-y-4">
-            <h1 class="text-[18px] lg:text-2xl tt font-[500] lg:font-semibold text-gray-900">
-              LocalTransfer.com, rahat və etibarlı nəqliyyat həlləri təqdim edərək, istifadəçilərə səyahət prosesini asanlaşdırmaq
-              məqsədilə qurulmuşdur.
-            </h1>
-            <p class="text-gray-700 tt font-normal text-base lg:text-xl">
-              Peşəkar sürücülərimiz və geniş avtomobil parkımızla yüksək keyfiyyətli xidmət və fərdiləşdirilmiş marşrutlar təklif
-              edirik. Azərbaycanın gözəlliklərini kəşf etmək üçün bizimlə səyahət edin!
-            </p>
-            <ul class="space-y-2">
-              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
-                <i class="fa-regular fa-circle-check"></i> <span>Hava Limanı Transferləri</span>
-              </li>
-              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
-                <i class="fa-regular fa-circle-check"></i> <span>VIP köçürmələr</span>
-              </li>
-              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
-                <i class="fa-regular fa-circle-check"></i> <span>Sürücü ilə avtomobil icarəsi</span>
-              </li>
-              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
-                <i class="fa-regular fa-circle-check"></i> <span>İstəyinizə uyğun olaraq istənilən istiqamətə ekskursiyalar</span>
-              </li>
-              <li class="flex items-center text-base lg:text-xl font-normal space-x-2">
-                <i class="fa-regular fa-circle-check"></i> <span>Turlar</span>
-              </li>
-            </ul>
-            <button class="py-2 lg:py-4 px-6 bg-[#FB3D27] text-base text-white rounded-full mt-8">
-              Ətraflı öyrən <i class="fa-solid fa-chevron-right"></i>
-            </button>
-          </div>
-
-          <div class="flex-1 grid grid-cols-2 gap-4">
-            <img
-              src="./assets/img/teklif.jpeg"
-              alt="Transfer image"
-              class="rounded-lg h-[360px] md:h-[500px] max-w-[180px] lg:max-w-[200px] xl:max-w-[250px] object-cover pb-10"
-            />
-            <img
-              src="./assets/img/aa.jpeg"
-              alt="Airport transfer"
-              class="rounded-lg h-[360px] md:h-[500px] max-w-[180px] lg:max-w-[200px] xl:max-w-[250px] object-cover mt-10 shadow-md"
-            />
-          </div>
-        </div>
-      </section> -->
       <section class="py-3 px-4 md:px-32 xxl:px-56 my-6">
         <div class="flex items-center mb-5">
-          <button class="text-gray-500 p-2 border-b-2 hover:text-gray-700 font-medium text-base tt">Video qalereya</button>
-          <button class="text-red-500 p-2 border-b-2 border-red-500 font-medium text-base tt">Maşınlar</button>
+          <button
+            onclick="getCards('video')"
+            id="video"
+            class="text-gray-500 p-2 border-b-2 hover:text-gray-700 font-medium text-base tt"
+          >
+            Video qalereya
+          </button>
+          <button onclick="getCards('masin')" id="masin" class="text-gray-500 p-2 border-b-2 font-medium text-base tt">
+            Maşınlar
+          </button>
         </div>
-        <div class="grid grid-cols-3 gap-5">
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-        </div>
+        <div id="my_cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
       </section>
     </main>
 
@@ -387,30 +257,15 @@
     </div>
 
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
       src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.min.js"
       integrity="sha512-ytM6hP1K9BkRTjUQZpxZKFjJ2TvE4QXaK7phVymsm7NimaI5H09TWWW6f2JMbonLp4ftYU6xfwQGoe3C8jta9A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- <script src="js/translate.js"></script> -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- <script src="js/scrollToTop.js"></script> -->
-    <script src="js/swiper.js"></script>
-    <script src="js/owl.js"></script>
+
     <script src="js/nav.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/qalereya.js"></script>
     <!-- <script src="js/load.js"></script> -->
     <script></script>
   </body>

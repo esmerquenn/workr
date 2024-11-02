@@ -264,14 +264,16 @@
               >
                 1
                 <div class="absolute -bottom-14 lg:-bottom-8 pl-1 lg:pl-8 w-[80px] lg:w-max text-center">
-                  <p class="antialiased font-medium text-[12px] md:text-sm lg:text-xl text-[#201D1D]">Sürüş detallarını daxil edin</p>
+                  <p class="antialiased font-medium text-[12px] md:text-sm lg:text-xl text-[#201D1D]">
+                    Sürüş detallarını daxil edin
+                  </p>
                 </div>
               </div>
               <div
                 class="relative z-10 grid w-10 h-10 font-bold step transition-all duration-300 rounded-full place-items-center"
               >
                 2
-                <div class="absolute -bottom-6  md:-bottom-9 pl-1 lg:pl-8 w-[100px] lg:w-max text-center">
+                <div class="absolute -bottom-6 md:-bottom-9 pl-1 lg:pl-8 w-[100px] lg:w-max text-center">
                   <p class="antialiased font-medium text-[12px] md:text-sm lg:text-xl text-[#201D1D]">Avtomobil seçin</p>
                 </div>
               </div>
@@ -280,7 +282,9 @@
               >
                 3
                 <div class="absolute -bottom-14 lg:-bottom-8 pl-1 lg:pl-8 w-[100px] lg:w-max text-center">
-                  <p class="antialiased font-medium text-[12px] md:text-sm lg:text-xl text-[#201D1D]">Əlaqə məlumatlarını daxil edin</p>
+                  <p class="antialiased font-medium text-[12px] md:text-sm lg:text-xl text-[#201D1D]">
+                    Əlaqə məlumatlarını daxil edin
+                  </p>
                 </div>
               </div>
               <div
@@ -294,7 +298,324 @@
             </div>
           </div>
         </div>
-        <div class="order_steps"></div>
+        <div class="order_steps">
+          <div id="order" class="order_step flex step_1_div flex-col md:flex-row gap-12 md:gap-5">
+            <div class="flex-1">
+              <div class="bg-red-500 text-white text-center py-5">
+                <h2 class="text-base md:text-xl tt font-medium">SÜRÜŞ DETALLARI</h2>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="bg-white border">
+                  <label for="name" class="block text-base tt px-4 pt-4 font-medium label_1"> Götürmə tarixi </label>
+                  <input id="datepicker" type="text" name="name" class="w-full p-2 focus:outline-none" />
+                </div>
+                <div class="bg-white border">
+                  <label for="time" class="block text-base tt px-4 pt-4 font-medium label_1"> Götürmə vaxtı </label>
+                  <select onchange="getTime()" id="time" class="w-full p-2 focus:outline-none">
+                    <option value="">0:00</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="bg-white border pr-2">
+                <label for="routeSelect" class="block text-base tt px-4 pt-4 font-medium label_1"> Marşrut </label>
+                <select id="routeSelect" class="w-full p-2 focus:outline-none" onchange="calculateAndDisplayRoute()">
+                  <option value="">Marşrutu seçin</option>
+                  <option value='{"lat":39.2097, "lng":45.4129, "name":"Naxçıvan"}'>Naxçıvan</option>
+                  <option value='{"lat":38.754, "lng":48.8506, "name":"Lənkəran"}'>Lənkəran</option>
+                  <option value='{"lat":40.3777, "lng":49.9183, "name":"Şirvan"}'>Şirvan</option>
+                  <option value='{"lat":41.092, "lng":45.4556, "name":"Qəbələ"}'>Qəbələ</option>
+                  <option value='{"lat":40.6219, "lng":47.1522, "name":"Ağdam"}'>Ağdam</option>
+                  <option value='{"lat":39.4581, "lng":48.5442, "name":"Masallı"}'>Masallı</option>
+                </select>
+              </div>
+              <div class="bg-white border pr-2">
+                <label for="transfer_type" class="block text-base tt px-4 pt-4 font-medium label_1"> Transfer tipi </label>
+                <select id="transfer_type" class="w-full p-2 focus:outline-none">
+                  <option value="one_way">Bir istiqamət</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col">
+              <div id="map" class="w-full h-52 md:h-62 border z-10 mb-0 pb-0"></div>
+              <div class="border flex items-center mt-4">
+                <span class="w-1/2 flex gap-2 items-center p-3 md:p-7 border-r">
+                  <i class="fa-solid fa-route text-xl md:text-3xl mr-1 md:mr-3 text-[#fb3d27]"></i>
+                  <div>
+                    <p class="text-sm font-medium">Ümumi məsafə</p>
+                    <p id="distance" class="text-base font-medium">- km</p>
+                  </div>
+                </span>
+                <span class="w-1/2 flex gap-2 items-center p-3 md:p-7">
+                  <i class="fa-regular fa-clock text-xl md:text-3xl mr-1 md:mr-3 text-[#fb3d27]"></i>
+                  <div>
+                    <p class="text-sm font-medium">Ümumi vaxt</p>
+                    <p id="duration" class="text-base font-medium">- dəq</p>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div id="order" class="order_step hidden w-full bg-white py-4 flex-wrap md:flex-nowrap gap-4">
+            <div class="w-full md:w-1/4 order-2 md:order-1">
+              <div class="p-6 bg-[#f9fafb] border">
+                <h2 class="text-xl tt font-medium">Təfərrüatlar</h2>
+                <div class="space-y-3 text-sm">
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Servis tipi</p>
+                    <p class="font-normal text-sm">Standart qiymət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Transfer tipi</p>
+                    <p>Bir istiqamət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Marşrut</p>
+                    <p id="marshrut">Hava limanı - Şəhər mərkəzi</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
+                    <p id="date_time">15/10/2024 20:00</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Ümumi məsafə</p>
+                    <p id="total_distance">25.5 km</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Ümumi vaxt</p>
+                    <p id="total_time">0 saat 32 dəq</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-10 border-t border-gray-300 pt-10 flex justify-between items-center">
+                <p class="text-xl font-medium">Ümumi</p>
+                <p id="total_amount" class="text-xl font-medium">00.00 ₼</p>
+              </div>
+            </div>
+
+            <div class="md:w-3/4 order-1 md:order-2">
+              <div class="bg-red-500 text-white text-center py-5">
+                <h2 class="text-base md:text-xl tt font-medium">AVTOMOBİL FİLTERİ</h2>
+              </div>
+              <div class="grid md:grid-cols-2 sm:grid-cols-4 mb-4">
+                <div class="bg-white border pr-2">
+                  <label class="block text-base tt px-4 pt-4 font-medium">Sərnişinlər</label>
+                  <select
+                    id="passengerSelect"
+                    class="w-full p-2 focus:outline-none"
+                    onchange="updateInfo('passenger', this.value)"
+                  >
+                    <option value="">Seçin</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+                <div class="bg-white border pr-2">
+                  <label class="block text-base tt px-4 pt-4 font-medium">Çamadanlar</label>
+                  <select id="bagSelect" class="w-full p-2 focus:outline-none" onchange="updateInfo('bag', this.value)">
+                    <option value="">Seçin</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+                <div class="bg-white border pr-2">
+                  <label class="block text-base tt px-4 pt-4 font-medium">Standart</label>
+                  <select id="standartSelect" class="w-full p-2 focus:outline-none" onchange="updateInfo('standart', this.value)">
+                    <option value="">Seçin</option>
+                    <option value="standart1">Standart 1</option>
+                    <option value="standart2">Standart 2</option>
+                  </select>
+                </div>
+                <div class="bg-white border pr-2">
+                  <label class="block text-base tt px-4 pt-4 font-medium">Standart</label>
+                  <select id="typeSelect" class="w-full p-2 focus:outline-none" onchange="updateInfo('type', this.value)">
+                    <option value="">Seçin</option>
+                    <option value="Bütünavtomobillər">Bütün avtomobillər</option>
+                    <option value="Minivan">Mini van</option>
+                  </select>
+                </div>
+                <!-- <div class="bg-white border pr-2">
+                  <label class="block text-base tt px-4 pt-4 font-medium">Tip</label>
+                  <select name="" id="" class="w-full p-2 focus:outline-none">
+                    <option value="">Bütün avtomobillər</option>
+                    <option value="">Bütün avtomobillər</option>
+                    <option value="">Bütün avtomobillər</option>
+                  </select>
+                </div> -->
+              </div>
+
+              <!-- Vehicle Cards -->
+              <div class="vehicle_box grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Burada araç kartları JavaScript ile eklenecek -->
+              </div>
+            </div>
+          </div>
+          <div id="order" class="order_step hidden w-full bg-white py-4 flex-wrap md:flex-nowrap gap-4">
+            <div class="w-full md:w-1/4 order-2 md:order-1">
+              <div class="p-6 bg-[#f9fafb] border">
+                <h2 class="text-xl tt font-medium">Təfərrüatlar</h2>
+                <div class="space-y-3 text-sm">
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Servis tipi</p>
+                    <p class="font-normal text-sm">Standart qiymət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Transfer tipi</p>
+                    <p>Bir istiqamət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Marşrut</p>
+                    <p id="marshrut">Hava limanı - Şəhər mərkəzi</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
+                    <p id="date_time">15/10/2024 20:00</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Ümumi məsafə</p>
+                    <p id="total_distance">25.5 km</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-2">
+                    <p class="font-medium text-base tt">Ümumi vaxt</p>
+                    <p id="total_time">0 saat 32 dəq</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-10 border-t border-gray-300 pt-10 flex justify-between items-center">
+                <p class="text-xl font-medium">Ümumi</p>
+                <p id="total_amount" class="text-xl font-medium">00.00 ₼</p>
+              </div>
+            </div>
+            <div class="w-full md:w-2/3 xl:w-3/4 order-1 md:order-2">
+              <div class="flex-1">
+                <div class="bg-red-500 text-white text-center py-5">
+                  <h2 class="text-base md:text-xl tt font-medium uppercase">Əlaqə məlumatları</h2>
+                </div>
+                <form>
+                  <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="bg-white border">
+                      <label for="name" class="block text-base tt px-4 pt-4 font-medium">Ad</label>
+                      <input type="text" id="name" name="name" class="w-full p-2 focus:outline-none" />
+                    </div>
+                    <div class="bg-white border">
+                      <label for="surname" class="block text-base tt px-4 pt-4 font-medium">Soyad</label>
+                      <input type="text" id="surname" name="surname" class="w-full p-2 focus:outline-none" />
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="bg-white border">
+                      <label for="email" class="block text-base tt px-4 pt-4 font-medium">E-mail ünvanı</label>
+                      <input type="email" id="email" name="email" class="w-full p-2 focus:outline-none" />
+                    </div>
+                    <div class="bg-white border">
+                      <label for="phone" class="block text-base tt px-4 pt-4 font-medium">Telefon</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+994 00 123 45 67"
+                        class="w-full p-2 focus:outline-none"
+                      />
+                    </div>
+                  </div>
+                  <div class="bg-white border">
+                    <label for="message" class="block text-base tt px-4 pt-4 font-medium">Sifariş üçün əlavə qeydlər</label>
+                    <textarea id="message" name="message" rows="4" class="w-full border-0 p-2 focus:outline-none"></textarea>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div id="order" class="order_step hidden w-full bg-white py-4 flex-wrap md:flex-nowrap gap-4">
+            <div class="w-full md:w-1/4 order-2 md:order-1">
+              <div class="p-6 bg-[#f9fafb] border">
+                <div class="space-y-3 text-sm">
+                  <h2 class="text-xl tt font-medium">Sürüş detalları</h2>
+
+                  <div class="border-b-2 border-[#84909A] pb-2 m-0">
+                    <p class="font-medium text-base tt">Ad</p>
+                    <p class="font-normal text-sm">Yusif</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1 m-0">
+                    <p class="font-medium text-base tt">Soyad</p>
+                    <p>Rzayev</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1">
+                    <p class="font-medium text-base tt">E-mail ünvanı</p>
+                    <p>user"gmail.com</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-41">
+                    <p class="font-medium text-base tt">Telefon</p>
+                    <p>+994503344549</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/4 order-2 md:order-1">
+              <div class="p-6 bg-[#f9fafb] border">
+                <div class="space-y-3 text-sm">
+                  <div class="py-1">
+                    <div id="map_little" class="w-full h-32 z-10 mb-0 pb-0"></div>
+                  </div>
+                  <h2 class="text-xl tt font-medium">Sürüş detalları</h2>
+
+                  <div class="border-b-2 border-[#84909A] pb-2 m-0">
+                    <p class="font-medium text-base tt">Servis tipi</p>
+                    <p class="font-normal text-sm">Standart qiymət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1 m-0">
+                    <p class="font-medium text-base tt">Transfer tipi</p>
+                    <p>Bir istiqamət</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1">
+                    <p class="font-medium text-base tt">Marşrut</p>
+                    <p id="marshrut">Hava limanı - Şəhər mərkəzi</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-41">
+                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
+                    <p id="date_time">15/10/2024 20:00</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1">
+                    <p class="font-medium text-base tt">Ümumi məsafə</p>
+                    <p id="total_distance">25.5 km</p>
+                  </div>
+                  <div class="border-b-2 border-[#84909A] py-1">
+                    <p class="font-medium text-base tt">Ümumi vaxt</p>
+                    <p id="total_time">0 saat 32 dəq</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="md:w-2/4 order-1 md:order-2">
+              <div class="card p-5 bg-[#f9fafb] border">
+                <img
+                  src="./assets/img/vito.jpg"
+                  alt="Mercedes Vito"
+                  class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+                />
+                <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
+                <div class="flex justify-between items-center my-3">
+                  <span>
+                    <span class="text-base text-[#84909A] font-medium pr-4 border-r border-[#84909a]"
+                      ><i class="fa-solid fa-user-group text-xl mr-1"></i> 3
+                    </span>
+                    <span class="text-base text-[#84909A] font-medium px-4"
+                      ><i class="fa-solid fa-briefcase text-xl mr-1"></i> 3
+                    </span>
+                  </span>
+                  <span class="text-xl font-medium tt text-[#84909a]">35 ₼ </span>
+                </div>
+              </div>
+              <div class="mt-10 border-t border-gray-300 pt-10 flex justify-between items-center">
+                <p class="text-xl font-medium">Ümumi</p>
+                <p class="text-xl font-medium">00.00 ₼</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- modal -->
 
         <div id="modal" class="hidden fixed inset-0 z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -365,7 +686,7 @@
               </li>
             </ul>
             <button class="py-2 lg:py-4 px-6 bg-[#FB3D27] text-base text-white rounded-full mt-8">
-              Ətraflı öyrən <i class="fa-solid fa-chevron-right"></i>
+              <a href="about.html">Ətraflı öyrən <i class="fa-solid fa-chevron-right"></i></a>
             </button>
           </div>
 
@@ -390,42 +711,7 @@
       <section class="py-3 px-4 md:px-32 xxl:px-56 my-6">
         <h2 class="tt font-medium text-2xl mb-6 text-center">Təklif etdiyimiz avtomobillərin siyahısı</h2>
         <div class="owl-carousel carousel-1">
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
-          <div class="card p-5 bg-[#f9fafb] border rounded-md">
-            <img
-              src="./assets/img/vito.jpg"
-              alt="Mercedes Vito"
-              class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-            />
-            <h3 class="text-2xl tt font-semibold">Mercedes Vito</h3>
-            <p class="text-xl tt font-medium text-gray-500">Minivan</p>
-          </div>
+          
         </div>
       </section>
       <section class="py-3 px-4 md:px-32 xxl:px-56 my-6">
@@ -541,7 +827,7 @@
             </div>
           </div>
           <button class="py-4 px-6 bg-[#FB3D27] text-white rounded-full mt-8">
-            Ətraflı öyrən <i class="fa-solid fa-chevron-right"></i>
+            <a href="servis.html">Ətraflı öyrən <i class="fa-solid fa-chevron-right"></i></a>
           </button>
         </div>
       </section>
@@ -578,22 +864,6 @@
       </div>
     </footer>
 
-    <div class="progress-container">
-      <svg class="progress-ring w-15 h-15">
-        <circle
-          class="progress-ring__background stroke-current text-gray-300 dark:text-gray-600"
-          stroke-width="2"
-          fill="transparent"
-          r="28"
-          cx="30"
-          cy="30"
-        />
-        <circle class="progress-ring__circle stroke-[#02018e]" stroke-width="2" fill="transparent" r="28" cx="30" cy="30" />
-      </svg>
-      <i
-        class="fa-solid fa-arrow-up text-[24px] text-[#3A3D4F] py-[11px] px-[13px] rounded-[50%] bg-[#d3d3d4] absolute dark:bg-gray-600 dark:text-gray-300"
-      ></i>
-    </div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -615,15 +885,16 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <!-- <script src="js/translate.js"></script> -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- <script src="js/scrollToTop.js"></script> -->
     <script src="js/data.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/owl.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/datePicker.js"></script>
     <script src="js/stepper.js"></script>
+    <script src="js/map.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/step2.js"></script>
+    <script src="js/step4.js"></script>
   </body>
 </html>
