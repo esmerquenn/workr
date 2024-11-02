@@ -3,6 +3,6 @@
   background: #eaecee;
 }
 .step_active {
-  color: #fff;
-  background: #fb3d27;
+  color: #fff !important;
+  background: #fb3d27 !important;
 }
