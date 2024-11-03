@@ -1,438 +1,132 @@
+// const translations = {
+//   az: {},
+//   en: {},
+//   ru: {},
+// };
+
+// function changeLanguage(language) {
+//   localStorage.setItem("selectedLanguage", language);
+
+//   document.querySelectorAll("[data-key]").forEach((element) => {
+//     const key = element.getAttribute("data-key");
+//     element.innerHTML = translations[language][key];
+//   });
+// }
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const selectedLanguage = localStorage.getItem("selectedLanguage") || "AZ";
+
+//   document.querySelectorAll("[data-key]").forEach((element) => {
+//     const key = element.getAttribute("data-key");
+//     element.innerHTML = translations[selectedLanguage][key];
+//   });
+//   const selectedElement = document.querySelector("[x-text='selected === '' ? 'AZ' : selected']");
+//   if (selectedElement) {
+//     selectedElement.textContent = selectedLanguage.toUpperCase();
+//   }
+// });
+
+// const translations = {
+//   az: {
+//     location: "Baku Azərbaycan",
+//     home: "Əsas səhifə",
+//     about: "Haqqımızda",
+//     services: "Xidmətlərimiz",
+//     gallery: "Qalereya",
+//     tours: "Turlar",
+//     contact: "Əlaqə",
+//   },
+//   en: {
+//     location: "Baku, Azerbaijan",
+//     home: "Home",
+//     about: "About Us",
+//     services: "Our Services",
+//     gallery: "Gallery",
+//     tours: "Tours",
+//     contact: "Contact",
+//   },
+//   ru: {
+//     location: "Баку, Азербайджан",
+//     home: "Главная",
+//     about: "О нас",
+//     services: "Наши услуги",
+//     gallery: "Галерея",
+//     tours: "Туры",
+//     contact: "Контакт",
+//   },
+// };
+
+// function changeLanguage(language) {
+//   localStorage.setItem("selectedLanguage", language);
+
+//   document.querySelectorAll("[data-key]").forEach((element) => {
+//     const key = element.getAttribute("data-key");
+//     element.innerHTML = translations[language][key];
+//   });
+
+//   // Dil seçimini göstermek için öğeyi güncelle
+//   const selectedElement = document.querySelector("[x-text='selected === '' ? 'AZ' : selected']");
+//   if (selectedElement) {
+//     selectedElement.textContent = language.toUpperCase();
+//   }
+// }
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const selectedLanguage = localStorage.getItem("selectedLanguage") || "az";
+
+//   document.querySelectorAll("[data-key]").forEach((element) => {
+//     const key = element.getAttribute("data-key");
+//     element.innerHTML = translations[selectedLanguage][key];
+//   });
+
+//   // Dil seçimini göstermek için öğeyi güncelle
+//   const selectedElement = document.querySelector("[x-text='selected === '' ? 'AZ' : selected']");
+//   if (selectedElement) {
+//     selectedElement.textContent = selectedLanguage.toUpperCase();
+//   }
+// });
 const translations = {
   az: {
-    paymentTitle: "sığorta ödənişi",
-    gomrukTitle: "Gömrük kalkulyator",
-    payment_choose: "ÖDƏNİŞİ SEÇİN",
-    home: "ANA SƏHİFƏ",
-    product: "Məhsullarımız",
-    life_insurance: "Həyat sığortası",
-    casko_insurance: "Kasko sığorta",
-    property_insurance: "Əmlak sığortası",
-    car_insurance: "Avtomobilin İcbari sığortası",
-    travel_insurance: "Səyahət sığortası",
-    about_company: "haqqımızda",
-    info: "Məlumat",
-    management: "Rəhbərlik",
-    mission: "Missiya",
-    biznes: "Biznesə yanaşma",
-    legislation: "Qanunvericilik",
-    vacancy: "Vakansiya",
-    questions: "Ən çox verilən suallar",
-    services: "Servİslər",
-    certificate_check: "Şəhadətnamə yoxla <br/> <span class='text-[.6rem]'>(icbari sığortanı yoxla)</span>",
-    certificate_check_title: "Şəhadətnamə yoxlama",
-    personal_cabinet: "şəxsi <br /> kabinet",
-    personal_cabinet_2: "şəxsi kabinet",
-
-    insurance_payment: "Sığorta ödənişi",
-    penalty_check: "Cərimə yoxla",
-    penalty_payment: "Cərimə ödənişi",
-    customs_calculator: "Gömrük kalkulyatoru",
-    contact: "ƏLAQƏ",
-    slide1_title: "Bize güvənin gələcəyinizi <br /> Heyat Sığortası ilə təmin edin!",
-    slide2_title: "Daşınmaz Əmlakınızın <br />İcbari Sığortası Bizimlə",
-    slide3_title: "KASKO Sığortasında<br />Etibarlı Tərəfdaşınız",
-    apply: "Müraciət et",
-    car_insurance: "Avto icbari sığorta",
-    life_insurance: "Həyat sığortası",
-    property_insurance: "Əmlak sığortası",
-    protect_friends: "Kiçik dostlarımızı qoruyaq onların bizə ehtiyaçları var",
-    about_description:
-      "Kiçik dostlarınızın gözlənilməz hallarda qorunması üçün heyvan sığortası ideal bir həll yoludur. Bu sığorta növü yalnız fövqəladə vəziyyətləri əhatə etməklə kifayətlənmir, həm də stasionar və ambulator müalicə, dərman təminatı, görüntüləmə və müayinə kimi geniş xidmətlərdən faydalanma imkanı verir. Bu şəkildə, təcili yardımlarla yanaşı, heyvanınızın sağlamlığını qorumaq üçün lazım olan bütün xidmətlərə rahatlıqla çıxış əldə edirsiniz.",
-
-    satisfied_clients: "Razı müştəri",
-    years_experience: "İl təcrübə",
-    partners: "Əməkdaş",
-    products: "Məhsullar",
-    life_insurance: "Həyat Sığortası",
-    property_insurance_mandatory: "Daşınmaz əmlakın icbari sığortası",
-    car_insurance_mandatory: "İcbari Nəqliyyat sığortası",
-    travel_insurance: "Səyahət Sığortası",
-    casco_insurance: "KASKO Sığorta",
-    learn_more: "Daha ətraflı",
-    property_insurance_description: "Daşınmaz əmlakınızı icbari sığorta ilə qoruyun.",
-    car_insurance_description: "Nəqliyyat vasitələrinizi icbari sığorta ilə təmin edin.",
-    casco_insurance_description: "KASKO sığorta ilə avtomobilinizi təhlükələrdən qoruyun.",
-    travel_insurance_description: "Səyahət sığortası ilə rahat bir səyahət planlayın.",
-    life_insurance_description: "Həyat sığortası ilə gələcəyinizi təhlükəsiz hala gətirin.",
-    voluntary_health_insurance: "Könüllü Tibbi Sığorta",
-    voluntary_health_insurance_description: "Könüllü Tibbi Sığorta haqqında məlumat.",
-    cargo_insurance: "Yük sığortası",
-    cargo_insurance_description: "Yük sığortası haqqında məlumat.",
-    green_card_system: "Yaşıl Kart Sistemi",
-    green_card_system_description: "Yaşıl Kart Sistemi haqqında məlumat.",
-    voluntary_property_insurance: "Daşınmaz Əmlakın Könüllü Sığortası",
-    voluntary_property_insurance_description: "Daşınmaz Əmlakın Könüllü Sığortası haqqında məlumat.",
-
-    insurance_tagline: "Sığortanız bir ünvanda",
-    website_info:
-      "www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Cəfərov tərəfindən təsis edilmiş, <br/>  Azərbaycan Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337  saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə başlanmışdır.",
+    home: "Əsas səhifə",
+    about: "Haqqımızda",
+    services: "Xidmətlərimiz",
+    gallery: "Qalereya",
+    tours: "Turlar",
     contact: "Əlaqə",
-    address: "Bakı ş. Səməd Vurğun küçəsi 34. (AF MALL, 3-cü mərtəbə)",
-    car_info_heading: "Avtomobil məlumatlarını daxil edin",
-    plate_number_label: " NV-nin qeydiyyat nişanı",
-    registration_certificate_label: "NV-nin qeydiyyat şəhadətnaməsi",
-    mobile_number_label: "Mobil nömrə",
-    registration_date_label: " NV-nin istehsal ili",
-    engine_capacity_label: "Mühərrik həcmi",
-    electric_car: "Elektrik avtomobili",
-    motorcycle: "Motosiklet",
-    engine_1500_2000: "200 двух тысяч",
-    engine_above_2000: "2000 və üzəri",
-    cargo_vehicle: "Yük avtomobili",
-    personal_info_heading: "Şəxsi məlumatlarınızı daxil edin",
-    id_number_label: "Şəxsiyyət vəsiqəsinin nömrəsi",
-    fin_code_label: "Fərdi indentifikasiya nömrəsi",
-    driver_license_label: "Sürücülük vəsiqəsinin seriya və nömrəsi",
-    continue_button: "davam edin",
-    insurance_recommendation:
-      "Sığorta şirkətləri barədə reytinq və rəylərlə tanış olduqdan sonra seçim etməyinizi tövsiyə edirik",
-    select_button: "Seçin",
-    id_option_aze: "AZE",
-    id_option_aa: "AA",
-    auto_insurance_title: "İcbari Avto Sığorta",
-    online_insurance_paragraph_1:
-      "Online İcbari Avto Sığorta almaq artıq 1sigorta.az icbari sığorta bürosu ilə daha asandır. Bunun üçün sizə cəmi 1 dəqiqə kifayətdir ki, icbari avtomobil sığortanızı onlayn olaraq ala biləsiniz. Texnologiyanın inkişaf etməsi nəticəsində online sığorta xidmətləri də yaranmağa başladı. Onlayn İcbari Avto Sığorta kimi digər sığorta xidmətləri də sizə artıq onlayn şəkildə təqdim edirik. Sığorta qiymətlərini də onlayn şəkildə ödənişləri etmək imkan artıq çox sadə bir şəkildə mümkündür. Evdən çıxmadan bütün sığorta işlərinizi həll edə bilərsiniz. İcbari sığorta bürosu sizə sığorta şərtlərini ən uyğun şəkildə təqdim edir. Avtonəqliyyat vasitələrinin icbari sığortası yoxlamaq ximdətindən yararlana bilərsiniz.",
-    mandatory_auto_insurance_heading: "İcbari Avtomobil Sığortası",
-    mandatory_auto_insurance_paragraph:
-      "İcbari Avtomobil Sığortası - Qanunvericiliklə tələb olunan və yol nəqliyyat hadisəsi nəticəsində üçüncü şəxslərə zərər yetirildikdə sığorta kompensasiyasının verilməsini nəzərədə tutan sığorta növüdür. İcbari Avto Sığorta qəza zamanı qarşı tərəfə verdiyiniz zərərə 5000 AZN-dək təminat verir. Avtonəqliyyat vasitələrinin icbari sığortası yoxlamaq üçün hadisə zamanı siz sığorta mütəxəssisini və yol polisini hadisə yerinə dəvət edərək hadisəni müvafiq formatda aktlaşdırırsınız. Daha sonra isə sığorta şirkətiniz sizin üçün dəymiş zərərin miqyasını müəyyən edərək avto nəqliyyat vasitənizin təmiri üçün ödəniş edir və ya müvafiq avtomobil servisində təmir etdirərək sizə təhvil verir.",
-    isb_bonus_malus_heading: "İcbari Sığorta Bürosu (İSB) və bonus-malus sistemi",
-    isb_bonus_malus_paragraph:
-      "İcbari Sığorta Bürosu bildiyiniz kimi icbari sığorta ödənişlərinə və bu ödənişlərin hesablanmasında istifadə olunan bonus-malus sisteminə nəzarət edir. Bu sistem daxilində İSB tərəfindən sizin qəzasız keçirdiyiniz hər sığorta ilinə görə bonus hesablanır sürücüyə. Nəticə etibarı ilə rəsmi şəkildə sizi mükafatlandırmış olur. Əks hal baş verəndə isə sizə malus hesablanaraq cərimə kimi tətbiq olunur. İSB.az bununla da sürücüləri daha məsuliyyətli olmağa, qaydalara riayət etməyə çağırmış olur.",
-    read_more_button: "Ətraflı oxu",
-    auto_insurance_heading: "Avtomobil Sığortası və İcbari sığorta",
-    auto_insurance_paragraph_1:
-      "Avtomobil Sığortası sığorta şirkətləri tərəfindən bir neçə formada təklif edilir. Rəsmi qaydalara əsasən istənilən nəqliyyat vasitəsinin İcbari Avto Sığortası olmaq məcburiyyəti vardır. Onlayn İcbari Avtomobil Sığortası olmadığı təqdirdə siz qanunla müəyyən edilmiş məbləğdə cərimələnəcəksiniz. İcbari sığorta sizə 5000 manatadək təminat vəd edir. Bu da sizin qarşılaşacağınız xoşa gəlməz hallarda daha rahat olmanız üçün dövlət tərəfindən yaradılmış imkandır.",
-    online_auto_insurance_check_heading: "Avto sığorta yoxlamaq onlayn formada",
-    online_auto_insurance_check_paragraph:
-      "Avto sığorta yoxlamaq xidmətimizdən sizdə faydalana bilərsiniz. Avtonəqliyyat vasitələrinin icbari sığortası yoxlamaq xidməti sizə əlverişli və münasib şərtlərlə təqdim edilir. Sığorta etdirdikdən sonra ən xırda detalları belə sizin üçün onlayn yaranmış sığorta profilindən baxa və nəzarət edə bilərsiniz. Hər hansı bir dəyişiklik olsa, burada öz əksini tapır. Şəxsiyyət vəsiqəsi və ya avtomobilin qeydiyyat nişanı kimi məlumatları daxil etməklə avto sığorta yoxlamaq imkanından istifadə edə bilərsiniz. Çox asan bir formada, sayta daxil olaraq avto sığorta yoxlamaq əməliyyatını həyata keçirə bilərsiniz. Mobil telefonlar vasitəsi ilə də çox asanlıqla avto sığorta işlərini həyata keçirə bilərsiniz.",
-    ensure_future_heading: "İcbari avto sığorta ilə gələcəyinizi təminat altına alın!",
-    ensure_future_paragraph:
-      "Avtomobillərin icbari sığortası haqqında bütün qanunlar “İcbari sığortalar haqqında” Azərbaycan Respublikası Qanununun 4-cü fəsilində qeyd olunmuşdur. Avtomobillərin sığorta olunması olduqca vacibdir. Çünki ölkədəki nəqliyyat sıxlığı sayəsində tez-tez qəzalar baş verə bilir. Bu səbəbdən avtomobil sahibləri xeyli miqdarda məbləğ ödəyərək maddi ziyana uğrayırlar. İcbari sığorta sayəsində siz təminat olaraq avtomobilinizə dəymiş ziyanı ödəməkdən azad ola bilirsiniz. Həmçinin sığorta ödənişlərinizi unutduğunuz zaman saytımıza daxil olaraq burada yoxlaya bilmək imkanına da sahibsiniz.",
-    compensation_amount_heading:
-      "Avtonəqliyyat vasitəsi sahiblərinin mülki məsuliyyətinin icbari sığortası zamanı ödəniləcək məbləğlər:",
-    compensation_1: "Bir fiziki şəxsin sağlamlığına dəyən zərər üzrə - 5 000 (beş min) AZN",
-    compensation_2: "Ümumi olaraq sağlamlığa dəyən zərər üzrə - 50 000 (əlli min) AZN",
-    compensation_3: "Üçüncü şəxslərin əmlakına dəyən zərər üzrə - 5 000 (beş min) AZN",
-    compensation_4: "Bir hadisə üzrə - 55 000 (əlli beş min) AZN",
-    property_insurance_advice_paragraph:
-      "Adından da göründüyü kimi sizin üçün vacib olan bütün əmlaklarınızın sığortası gələcəyiniz üçün edə biləcəyiniz əsas zəmanətlərdən biridir. Ona görə də avtomobilinizi sığorta etdirməyi unutmayın və 1sigorta.az kimi etibarlı sığorta vasitəçilərinə müraciət etməyinizi tövsiyə edirik.",
-    online_insurance_advantage_heading: "Onlayn İcbari sığorta vaxt qazandırır",
-    online_insurance_advantage_paragraph:
-      "Onlayn icbari sığorta almaq sizin üçün əlavə vaxt qazandırır. Müxtəlif sığorta agentlərinin sizi zəng edib narahat etməsindən narahat olmusunuzsa 1sigorta.az ilə onlayn icbari avto sığorta ala bilərsiniz. Bunun üçün sizə sadəcə şəxsi məlumatlarınızın yəni - şəxsiyyət vəsiqəsi, sürücülük vəsiqəsi və texpassport lazım olacaq. Daha sonra sığorta şirkətini seçərək icbari avto sığorta müqaviləniz üçün nəzərdə tutulmuş məbləği ödəyə biləcəksiniz. Sığorta ödənişini həyata keçirdikdən sonra, sizin avtonəqliyyat vasitəniz sığorta edilmiş olacaq və rahatlıqla avtonəqliyyat vasitənizi idarə edə bilərsiniz.",
-    online_auto_insurance_advantage_heading: "Onlayn İcbari Avto Sığorta almağın üstünlükləri",
-    online_auto_insurance_advantage_paragraph:
-      "Onlayn İcbari Avto Sığorta almağın üstünlükləri barədə deyə bilərik ki, cərimələr hazırda yollarda quraşdırılmış kameralar tərəfindən avtomatik olaraq edilir. Bunu nəzərə alaraq maksimum dərəcədə çalışmalısınız ki, maşın sığortası bitmədən siz yeni sığortanızı əldə edəsiniz. Əgər icbari sığorta bitibsə sığortanızı yeniləmədən nəqliyyat vasitənizi idarə etməməlisiniz. Hazırda isə icbari sığortanızı lazım olan anda yeniləyə bilməyiniz üçün 1sigorta.az onlayn sığorta platforması var. Siz 1sigorta.az saytı vasitəsi ilə maşın üçün icbari avto sığortanı 1 dəqiqə ərzində əldə edərək yolunuza rahatlıqla davam edə biləcəksiniz.",
-    isb_info_heading: "İcbari Sığorta Bürosu (İSB) nədir?",
-    isb_info_paragraph:
-      "İcbari sığortalar haqqında Qanunla nəzərdə tutulanların yerinə yetirilməsi üçün həmin qanunun tələbləri nəzərə alınmaqla AR-ın Mülki Məcəlləsinə uyğun olaraq hüquqi şəxslərin ittifaqı kimi təsis edilib və fəaliyyət göstərir. İcbari Sığorta Bürosu (İSB) özlüyündə sığorta olunanların, zərərçəkən və zərər vurulan şəxslərin müdafiəsini, icbari sığorta ilə bağlı sisteminin sabitliyi və inkişafını təmin etmək üçün yaradılmışdır. Siz də ola biləcək hər hansı narahatçılığınız üçün birbaşa İSB-yə müraciət edə bilərsiniz. İcbari Sığorta Bürosu sizin müraciətinizi qeydə alaraq, araşdıracaq və hüquqi olaraq sizə yardımçı olacaqdır.",
-    isb_activity_heading: "İSB az fəaliyyəti nədən ibarətdir?",
-    isb_activity_paragraph:
-      "Sığorta şirkətləri birlikdə İSB az - ın təməlini qoymuş və formalaşdırmışdır. Bu da özündə o mənanı ifadə edir ki, İSB az həm dövlət qurumu olaraq nəzarət edici mövqeyə malikdir, həm də şirkətlərin ortaq marağını qoruyan fərdi qurum səlahiyyətlərinə malikdir.",
-    mandatory_insurance_benefits_heading: "İcbari Sığorta Sizə nə qazandırır?",
-    mandatory_insurance_benefits_paragraph:
-      "İcbari Sığorta alışı artıq tam olaraq onlaynlaşıb. Bununla da siz öz avtonəqliyyat vasitənizə 5000 AZN-dək təminat əldə edirsiniz. Əgər hər hansı qəza hadisəsi olarsa icbari sığorta sizin zərər çəkmiş tərəfə vurduğunuz ziyanın 5000 manatadək olan hissəsini qarşılayacaq. Beləliklə siz, icbari sığorta ilə çox az məbləğ ödəyərək böyük təminat əldə etmiş olursunuz.",
-    insurance_calculator_heading: "İcbari sığorta Kalkulyatoru nə üçün lazımdır?",
-    insurance_calculator_paragraph:
-      "İcbari Sığorta Kalkulyatoru icbari sığortanı online yoxlamaq üçün istifadə edilən yeni bir funksiyadır. İcbari sığortanı online yoxlamaq üçün təqdim edilən, hesablayıcı icbari sığorta kalkulyatoru çox sadə və asan istifadə olunan bir alətdir. İcbari sığorta ilə bağlı hesablamalarınızı icbari sığorta kalkulyatoru vasitəsi ilə asanlıqla edə bilərsiniz.",
-    formTitle: "Bizə yazın",
-    firstName: "Ad",
-    lastName: "Soyad",
-    phoneNumber: "Nömrə",
-    emailName: "Email",
-    message: "Mesaj",
-    submitButton: "Göndər",
-    first_name: "Ad",
-    last_name: "Soyad",
-    father_name: "Ata adı",
-    address_name: "Ünvan",
-    birth_date: "Doğum tarixi",
-    phone_number: "Mobil nömrə",
-    gender: "Cins",
-    male: "Kişi",
-    female: "Qadın",
-    terms_title: "Şərtlər",
-    life_insurance_confirmation: "Həyat Siğortası aşağıdakı məlumatları təsdiq edir:",
-    no_medication: "Son 12 ayda müntəzəm olaraq heç bir dərman qəbul etməmişəm.",
-    no_treatment_last_5_years: "Son 5 ildə xəstəxanada müalicə almışam və hal-hazırda da heç bir müalicə planlaşdırmıram.",
-    no_health_issues:
-      "Son 5 ildə səhhətimdə aşağıda qeyd edilən hallar aşkarlanmayıb və bu hallardan heç bir müalicə almamışam: epilepsiya, yuxu apnesi, başgicəllənmə, osteoporoz, hər hansı bir ruhi pozğunluqlar, görmə və ya eşitmə qabiliyyətinin itirilməsi.",
-    not_disabled: "Hal-hazırda əlil deyiləm və heç bir əlillik müavinəti üçün müraciət etməyi planlaşdırmıram.",
-    no_dangerous_sports: "Peşəkar və ya həvəskar kimi heç bir təhlükəli və ya ekstremal idmanla məşğul olmuram.",
-    confirm_button: "Təsdiq edirəm!",
-    insurance_information: "Siğorta məlumatları",
-    start_date: "Başlama tarixi",
-    promo_code: "promo kod",
-    express: "Express",
-    express_plus: "Express+",
-    express_plus_plus: "Express++",
-    accidental_death: "Bədbəxt hadisə nəticəsində ölüm",
-    occupational_death: "Peşə xəstəliyi nəticəsində ölüm",
-    disability: "I/II qrup əlillik (100%/75%)",
-    bodily_injury: "Bədən xəsarəti",
-
-    select_button: "Seçin",
-    insurance_responsibility: "Həyat sığortası hansı öhdəliyi daşıyır?",
-    insurance_responsibility_text: `"Həyat sığortası" müqaviləsinə görə Sığortaçı müqavilə ilə razılaşdırılmış və sığortalının ödədiyi sığorta haqqı müqabilində sığortalının müqavilədə göstərilmiş sığorta riskləri üzrə sığorta hadisəsinin baş verdiyi halda müqavilə ilə razılaşdırılmış həyat sığortası məbləğini faydalanan şəxsə ödəməyi öhdəsinə götürür. Sığorta müqaviləsində başqa cür nəzərdə tutulmamışdırsa, sığorta haqqının ilk hissəsinin və ya tam ödənilməsi halında, sığorta təminatının müddəti sığorta müqaviləsini bağlandığı gün saat iyirmi dörddən başlanır və sığorta müqaviləsinə əsasən həmin müqavilənin qüvvədə olduğu sonuncu gün saat iyirmi dörddə başa çatır.`,
-    voluntary_insurance: "Həyat Sığortası Sahəsi Könüllü Sığorta",
-    voluntary_insurance_text: `"Həyat Sığortası" sığorta növü sığorta olunan bədbəxt hadisə, yaxud xəstəlik nəticəsində öldükdə, ümumi, yaxud peşə əmək qabiliyyətini tam və ya qismən itirdikdə, yaxud bədbəxt hadisə nəticəsində sağlamlığına başqa cür xəsarət dəydikdə, müqavilədə müəyyən edilən məbləğdə sığorta ödənişinin həyata keçirilməsini nəzərdə tutur.`,
-    current_market_value: "Cari bazar dəyəri",
-    engine_capacity: "Mühərrik həcmi",
-    driving_experience: "Sürücülük təcrübəsi",
-    release_year: "Buraxılış ili",
-    kasko_protection: "Kasko Sığortası adətən avtomobil sahiblərini hansı hallardan qoruyur?",
-    kasko_protection_text: `Kasko sığorta əldə edən zaman sizə verilən təminatlara diqqət yetirməlisiniz. Çünki sığorta təminatları kasko sığorta sığorta şirkətindən və əldə etdiyiniz sığorta paketlərindən asılı olaraq dəyişə bilir. Adətən Kasko sığorta sizin avtomobilinizi sığorta edən sığorta növüdür. Yəni hər hansı hadisə baş verdikdə sizin avtomobilinizə dəyən ziyanı qarşılamaq üçün yaradılmış sığorta növüdür kasko sığorta. Ancaq unutmayın ki, icbari sığorta ilə kasko sığortanı qarışdırmaq olmaz. İcbari sığorta sizin avto məsuliyyət sığortanız olduğu üçün bu hadisə zamanı qarşı tərəfin xərclərini ödəmək üçün nəzərdə tutulub. Amma ki, KASKO sığorta növü isə eyni hadisədə sizin öz avtomobilinizə dəyən zərəri qarşılamaq üçündür.`,
-    online_kasko_opportunity: "Onlayn Kasko sığorta əldə etmək imkanını qaçırma!",
-    online_kasko_opportunity_text: `Onlayn Kasko sığorta sizin maşınınızı tam olaraq sığorta edir. Kasko sığorta paketlərini əldə etmək üçün sizə ən rahat üsul olaraq 1sigorta.az portalını təklif edirik. Siz Parking kasko sığorta paketindən əlavə tam kasko sığorta paketlərini də bizə müraciət edərək əldə edə bilərsiniz.`,
-    kasko_pricing: "KASKO sığortasının qiymətinini müəyyən edilməsi:",
-    kasko_pricing_text: `Kasko sığorta alışı zamanı sığorta şirkətləri tərəfindən avtomobilin mühərrik həcmi, real bazar dəyəri, vəziyyəti, marka və modeli dəyərləndirilərək qiymət təyin edilir. Hətta bu qiymət təyin etmə mexanizminə sizin sürücülük təcrübənizin də təsiri mövcuddur. 1sigorta.az sizin üçün müxtəlif sığorta şirkətləri ilə əməkdaşlıq etdiyi üçün ən uyğun kasko sığorta paketlərini və müxtləif formatlı kasko sığorta paketlərini təklif edə bilir. Bunun üçün sadəcə bizimlə əlaqə saxlamanız yetərlidir. Biz sizin üçün Paşa Sığorta, Atəşgah sığorta, Bakı Sığorta, Xalq Sığorta və digər şirkətlərin təkliflərini bir gün ərzində verə bilirik.`,
-    kasko_easy_purchase: "Kasko Sığorta Almaq artıq daha asandır!",
-    kasko_easy_purchase_text: `Kasko sığorta almaq üçün bizə zəng etməyiniz kifayətdir. Biz sizə ən sərfəli paketi ən qısa zamanda təmin edə bilirik. Eyni zamanda sizə kasko sığorta ödənişi üçün hissəli ödəniş şərtləri də təklif edə bilirik.`,
-    brand: "Marka",
-    model: "Model",
-    franchise: "Franşiza",
-    pasport: "Pasport",
-    enter_travel_information: "Səyahət məlumatlarınızı daxil edin",
-    start_of_trip: "Səyahət başlanğıcı",
-    end_of_trip: "Səyahət sonu",
-    template_days: "Şablon günlər",
-    travel_zone_1: "Səyahətİn zonası",
-    travel_zone_2: "Səyahətİn məqsədİ",
-    what_is_travel_insurance: "Səyahət sığortası nedir?",
-    what_is_travel_insurance_text: `Səyahət sığortası, səyahət edərkən və ya tətildə olduğunuz zaman müəyyən problemlərlə qarşılaşsanız, maliyyə köməkliyi ilə sizi təmin edir. O, baqajın itirilməsindən tutmuş xəstələndiyiniz və ya qəzaya düşdüyünüz zaman tibbi xidmətin dəyərinə qədər bir sıra imkanları əhatə edir. Onunn necə işlədiyini, niyə bu qədər vacib olduğunu və ondan istifadə edərkən nələrə diqqət etmək lazım olduğunu bilmək çox zəruridir.`,
-    what_does_travel_insurance_cover: "Səyahət sığortasına nələr daxildir?",
-    what_does_travel_insurance_cover_text: `Sığortasız səyahət, bir şey səhv olarsa, sizi ağır qiymətə başa gələ bilər. Vəziyyətdən asılı olaraq, səyahət sığortası geniş imkanlara malikdir.<br />Aşağıdakı imkanlar daxildir:`,
-    what_travel_insurance_covers_list: `itirilmiş və ya oğurlanmış çantalar (bəzi müddəalarda baqaj örtüyü ilə əlavə), müalicə xərcləri və sizi evə çatdırmaq kimi təcili tibbi xərclər, səyahətinizin ləğvi, təxirə salınması və ya qısaldılması xərcləri (ləğv olunması ilə bağlı sığorta bəzən əlavə ödənişlə), gecikmələr, ləğvlər kimi səyahət və ya yerləşmə ilə bağlı problemlər, əmlaka ziyan vurmaq və ya xəsarət yetirmək üçün məhkəməyə verildiyiniz halda hüquqi xərclər.`,
-    insurance_prices_research_text: `Mövcud olan sığorta qiymətləri müxtəlif sığortaçılar və şirkətlər arasında əhəmiyyətli dərəcədə dəyişəcək. Buna görə satın almadan öncə daha ətraflı araşdırma etmək və səyahət sığortası qaydaları ilə yaxından tanış olmaq çox zəruridir.`,
-    online_travel_insurance_purchase: "Səyahət Sığortası online almaq imkanı",
-    online_travel_insurance_purchase_text: `"Səyahət sığortası online" almaq sizin güvənli səyahətinizin üçün ən vacib amillərdən biridir. Bildiyiniz kimi avropa, amerika və digər inkişaf etmiş ölkələrdə sığorta sistemi ola biləcək xoşa gəlməz hadisələr üçün ən vacib nüansdır. Səyahət zamanı sığortalanmaq sizi eyni zamanda xoşa gəlməz hadisələr zamanı çıxacaq ödənişlərdən də sığortalayır. Bununla da siz hadisə zamanı ilkin yardımı rahatlıqla səyahət sığortası online aldığınız sığorta şirkətiniz tərəfindən yönləndirilərək ala biləcəksiniz.`,
-    advantages_of_travel_insurance: "Səyahət Sığortası almağın üstünlükləri",
-    advantages_of_travel_insurance_text: `" Səyahət sığortası" almağın üstünlükləri olaraq ilkin olaraq sizə qeyd edə bilərik ki, xaricə səyahət edən zaman sizin üçün səyahət sığortası ən vacib sənədlərdən biridir. Səyahət sığortası alaraq siz özünüzü sığortalamış olursunuz. Beləliklə isə baş verən hər bir hadisə zamanı əlavə pul ödəməkdən azad olursunuz. Bununla yanaşı unutmayın ki, viza üçün səyahət sığortası sənəd toplayarkən ən vacib tələb edilən sənəddir.`,
-    easy_online_travel_insurance_purchase: "Səyahət Sığortası online almaq çox asandır!",
-    easy_online_travel_insurance_purchase_text: `Seyahet Sigortasi online almaq 1sigorta.az ilə artıq çox asandır. Bunun üçün siz ilkin olaraq şəxsi məlumatlarınızı daxil edib daha sonra səyahət sığortası üçün aralığını və məqsədini seçərək istədiyiniz sığorta şirkəti ilə səyahət sığortanızı online ala biləcəksiniz.`,
-    steps_for_online_travel_insurance: "Səyahət Sığortası online əldə edən zamanı izləyəcəyiniz addımlar",
-    steps_for_online_travel_insurance_text: `Səyahət Sığortası online alan zamanda siz sığorta şirkətinizi seçərkən qarşısında olan düymələrə tıklayaraq müvafiq sığorta şirkətinin reytinqini və onun haqqında gələn müsbət və ya mənfi rəyləri oxuya biləcəksiniz. Bununla da siz səyahət sığortanız ilə gələcəkdə baş verə biləcək sığorta hadisəsi zamanı hansı şirkətdən daha asanlıqla yardım ala biləcəyinizə əmin olacaqsınız. Hazırda davam edən Covid-19 pandemiyası ilə əlaqədar olaraq sığorta alarkən şərtlərlə diqqətlə tanış olmağınız çox önəmlidir. Çünki bir sıra səfirliklər səyahət sığortanızı alarkən sığorta müqavilənizdə belə bir bəndin olub olmamasını yoxlamaqdadır artıq. Səyahət Sığortası almadan öncə bizim müştəri xidmətlərimizlə də əlaqə saxlayaraq geniş məlumat əldə edə bilərsiniz. 1sigorta.az olaraq daim sizin viza üçün səyahət sığortanızı online almağınıza yardımçı ola bilərik`,
-    travel_insurance_prices_section: "Səyahət sığortası qiymətləri",
-    travel_insurance_prices_section_text: `Səyahət sığortası qiymətləri seçdiyiniz səyahət formatına görə dəyişə bilir. Eyni zamanda 1sigorta.az ilə siz seçdiyiniz səyahət formatı üzrə müxtəlif şirkətlərin qiymətlərini eyni anda görə biləcəksiniz. Bu da sizə sığotanızı daha sərfəli hansı şirkətdən əldə edə bilərsinizsə onu rahat bir formada görmək imkanı yaradır. Səyahət sığortası qiymətləri ilə birlikdə səyahət sığortası alacağınız şirkətin reytinqləri də sizin üçün vacib amil olmalıdır. Bu əgər hər hansı xoşagəlməz hadisə baş versə sığorta şirkətinin sizə göstərəcəyi xidmətin əyani formasıdır.`,
-    annual_travel_insurance: "1 illik səyahət sığortası almaq imkanı",
-    annual_travel_insurance_text: `1 illik səyahət sığortası almaq istəyənlər də eyni ilə yuxarıda qeyd etdiyimiz kimi saytımıza daxil olaraq müvafiq bölmələri ardıcıllıqla doldurması lazımdır. Daha sonra səyahət koridorunu seçərək 1 illik səyahət sığortası üçün ödəməli olduğu qiyməti rahatlıqla görə bilər. Şirkətlər arasındakı qiymət və reytinq fərqliliklərini analiz edərək özü üçün ən uyğun seçimi edə bilərsiniz. 1 illik səyahət sığortası almaq 1sigorta.az ilə çox asandır.`,
+    language_az: "AZ",
+    language_ru: "RU",
+    language_en: "EN",
+    currency_azn: "AZN",
+    currency_usd: "USD",
+    currency_eur: "EUR",
+  },
+  en: {
+    home: "Home",
+    about: "About Us",
+    services: "Our Services",
+    gallery: "Gallery",
+    tours: "Tours",
+    contact: "Contact",
+    language_az: "AZ",
+    language_ru: "RU",
+    language_en: "EN",
+    currency_azn: "AZN",
+    currency_usd: "USD",
+    currency_eur: "EUR",
   },
   ru: {
-    compulsory: "Обязательное <br /> страхование",
-    payment: "страховой <br /> платеж",
-    paymentTitle: "страховой  платеж",
-    gomrukTitle: "Gömrük kalkulyator",
-
-    payment_choose: "ВЫБЕРИТЕ ПЛАТЕЖ",
-    home: "ГЛАВНАЯ",
-    product: "Наши продукты",
-    life_insurance: "Страхование жизни",
-    casko_insurance: "КАСКО страхование",
-    property_insurance: "Страхование имущества",
-    car_insurance: "Обязательное страхование автомобиля",
-    travel_insurance: "Страхование путешествий",
-    about_company: "О компании",
-    info: "Информация",
-    management: "Руководство",
-    mission: "Миссия",
-    biznes: "Подход к бизнесу",
-    legislation: "Законодательство",
-    vacancy: "Вакансия",
-    questions: "Часто задаваемые вопросы",
-    services: "Услуги",
-    certificate_check: "Проверка свидетельства <br/> <span class='text-[.6rem]'>(проверка обязательного страхования)</span>",
-    certificate_check_title: "Проверка сертификата",
-    personal_cabinet: " личный <br /> кабинет",
-    personal_cabinet_2: " личный кабинет",
-    insurance_payment: "Страховой платеж",
-    penalty_check: "Проверка штрафа",
-    penalty_payment: "Оплата штрафа",
-    customs_calculator: "Таможенный калькулятор",
-    contact: "КОНТАКТЫ",
-    slide1_title: "Доверьтесь нам, обеспечьте свое <br/> будущее с помощью <br />  Страхования Жизни!",
-    slide2_title: "Обязательное Страхование <br />Вашего Недвижимого Имущества",
-    slide3_title: "Ваш надежный партнер <br/> в страховании КАСКО",
-    apply: "Подать заявку",
-    car_insurance: "Обязательное страхование автомобиля",
-    life_insurance: "Страхование жизни",
-    property_insurance: "Страхование имущества",
-    protect_friends: "Давайте защитим наших маленьких друзей, они нуждаются в нас",
-    voluntary_health_insurance: "Добровольное медицинское страхование",
-    voluntary_health_insurance_description: "Информация о добровольном медицинском страховании.",
-    cargo_insurance: "Страхование грузов",
-    cargo_insurance_description: "Информация о страховании грузов.",
-    green_card_system: "Система «Зелёная карта»",
-    green_card_system_description: "Информация о системе «Зелёная карта».",
-    voluntary_property_insurance: "Добровольное страхование недвижимости",
-    voluntary_property_insurance_description: "Информация о добровольном страховании недвижимости.",
-
-    about_description:
-      "Страхование животных — это идеальное решение для защиты ваших маленьких друзей в непредвиденных ситуациях. Этот вид страхования охватывает не только чрезвычайные ситуации, но и дает возможность воспользоваться широким спектром услуг, таких как стационарное и амбулаторное лечение, обеспечение лекарствами, диагностика и обследование. Таким образом, вы получаете легкий доступ ко всем необходимым услугам для защиты здоровья вашего питомца, помимо экстренной помощи.",
-    satisfied_clients: "Довольные клиенты",
-    years_experience: "Лет опыта",
-    partners: "Партнеры",
-    products: "Продукты",
-    life_insurance: "Страхование жизни",
-    property_insurance_mandatory: "Обязательное страхование недвижимости",
-    car_insurance_mandatory: "Обязательное страхование транспорта",
-    travel_insurance: "Страхование путешествий",
-    casco_insurance: "КАСКО страхование",
-    learn_more: "Подробнее",
-    casco_insurance_description: "Защитите свой автомобиль от опасностей с помощью страхования КАСКО.",
-    travel_insurance_description: "Планируйте безопасное путешествие с помощью страхования путешествий.",
-    car_insurance_description: "Обеспечьте свои транспортные средства с помощью обязательного страхования.",
-    property_insurance_description: "Защитите свою недвижимость с помощью обязательного страхования.",
-    life_insurance_description: "Обеспечьте свое будущее с помощью страхования жизни.",
-    insurance_tagline: "Ваша страховка на одном сайте",
-    website_info:
-      "Сайт www.1sigorta.az был основан Мирджафаром Джафаровым 19.07.2024 года, <br/> и на основании лицензии № SA – 0337, выданной Центральным банком Азербайджанской Республики, начата страховая деятельность на сайте.",
-    contact: "Контакты",
-    address: "г. Баку, ул. Самеда Вургуна, 34. (AF MALL, 3-й этаж)",
-    car_info_heading: "Введите данные автомобиля",
-    plate_number_label: "Номерной знак",
-    registration_certificate_label: "Свидетельство о регистрации ТС",
-    mobile_number_label: "Мобильный номер",
-    registration_date_label: "Дата регистрации автомобиля",
-    engine_capacity_label: "Объем двигателя",
-    electric_car: "Электромобиль",
-    motorcycle: "Мотоцикл",
-    engine_1500_2000: "2000-ə qədər",
-    engine_above_2000: "2000 и выше",
-    cargo_vehicle: "Грузовой автомобиль",
-    personal_info_heading: "Введите свои личные данные",
-    id_number_label: "Номер удостоверения личности",
-    fin_code_label: "Идентификационный номер",
-    driver_license_label: "Серия и номер водительского удостоверения",
-    continue_button: "Продолжить",
-    insurance_recommendation: "Мы рекомендуем вам выбрать после ознакомления с рейтингами и отзывами о страховых компаниях",
-    select_button: "Выбрать",
-    id_option_aze: "AZE",
-    id_option_aa: "AA",
-    auto_insurance_title: "Обязательное Автострахование",
-    online_insurance_paragraph_1:
-      "Получение онлайн обязательного автострахования стало проще с 1sigorta.az, бюро обязательного страхования. Для этого вам потребуется всего 1 минута, чтобы получить обязательное автострахование онлайн. С развитием технологий также начали появляться онлайн-страховые услуги. Мы уже предоставляем вам другие страховые услуги, такие как обязательное автострахование, в онлайн-режиме. Возможность оплаты страховых взносов онлайн также стала очень простой. Вы можете решить все свои страховые вопросы, не выходя из дома. Бюро обязательного страхования предлагает вам наиболее подходящие условия страхования. Вы можете воспользоваться услугой проверки обязательного страхования транспортных средств.",
-    mandatory_auto_insurance_heading: "Обязательное Автострахование",
-    mandatory_auto_insurance_paragraph:
-      "Обязательное автострахование - это вид страхования, требуемый законодательством, который предусматривает выплату страховой компенсации в случае нанесения ущерба третьим лицам в результате дорожно-транспортного происшествия. Обязательное автострахование обеспечивает покрытие ущерба, нанесенного другой стороне в результате аварии, до 5000 AZN. Для проверки обязательного страхования транспортных средств при аварии вы вызываете на место происшествия страхового эксперта и дорожную полицию, и оформляете происшествие в соответствующем формате. Затем ваша страховая компания определяет размер нанесенного ущерба и оплачивает ремонт вашего транспортного средства или проводит ремонт в соответствующем автосервисе и передает вам отремонтированное транспортное средство.",
-    isb_bonus_malus_heading: "Бюро Обязательного Страхования (ИСБ) и система бонус-малус",
-    isb_bonus_malus_paragraph:
-      "Бюро Обязательного Страхования контролирует выплаты и систему бонус-малус, которая используется при расчете этих выплат. В рамках этой системы ИСБ начисляет бонус за каждый год без аварий. Таким образом, вы официально вознаграждаетесь. В противном случае вам начисляется малус, который применяется в качестве штрафа. ISB.az также призывает водителей быть более ответственными и соблюдать правила.",
-    read_more_button: "Читать дальше",
-    auto_insurance_heading: "Автострахование и Обязательное страхование",
-    auto_insurance_paragraph_1:
-      "Автострахование предлагается страховыми компаниями в нескольких формах. В соответствии с официальными правилами, обязательное автострахование должно быть у любого транспортного средства. Если у вас нет онлайн-обязательного автострахования, вы будете оштрафованы на сумму, установленную законом. Обязательное страхование обеспечивает вам покрытие до 5000 AZN. Это возможность, созданная государством, чтобы вы могли чувствовать себя спокойнее в случае возникновения неприятных ситуаций.",
-    online_auto_insurance_check_heading: "Проверка автострахования в онлайн режиме",
-    online_auto_insurance_check_paragraph:
-      "Вы можете воспользоваться нашей услугой проверки автострахования в онлайн-режиме. Услуга проверки обязательного страхования транспортных средств предлагается вам на выгодных и удобных условиях. После страхования вы можете просмотреть и контролировать даже мельчайшие детали через ваш онлайн-страховой профиль. Если произойдут какие-либо изменения, они отразятся здесь. Вы можете воспользоваться возможностью проверки автострахования, введя такие данные, как удостоверение личности или номерной знак автомобиля. Вы можете легко выполнить операцию проверки автострахования, просто зайдя на сайт. Вы также можете легко осуществить автострахование через мобильные телефоны.",
-    ensure_future_heading: "Обеспечьте свое будущее с обязательным автострахованием!",
-    ensure_future_paragraph:
-      "Все законы об обязательном автостраховании указаны в главе 4 Закона Азербайджанской Республики «Об обязательных страхованиях». Страхование автомобилей крайне важно. В стране часто происходят аварии из-за высокой плотности движения. Из-за этого владельцы автомобилей несут значительные убытки, оплачивая крупные суммы. Благодаря обязательному страхованию вы освобождаетесь от необходимости оплачивать ущерб, нанесенный вашему автомобилю. Вы также можете проверить свои страховые платежи, если забудете о них, посетив наш сайт.",
-    compensation_amount_heading:
-      "Суммы выплат по обязательному автострахованию гражданской ответственности владельцев транспортных средств:",
-    compensation_1: "За ущерб, нанесенный здоровью одного физического лица - 5 000 (пять тысяч) AZN",
-    compensation_2: "За общий ущерб, нанесенный здоровью - 50 000 (пятьдесят тысяч) AZN",
-    compensation_3: "За ущерб, нанесенный имуществу третьих лиц - 5 000 (пять тысяч) AZN",
-    compensation_4: "За одно происшествие - 55 000 (пятьдесят пять тысяч) AZN",
-    property_insurance_advice_paragraph:
-      "Как видно из названия, страхование всего вашего имущества - это одна из основных гарантий вашего будущего. Поэтому не забудьте застраховать свой автомобиль и обратитесь к надежным страховым компаниям, таким как 1sigorta.az.",
-    online_insurance_advantage_heading: "Онлайн обязательное страхование экономит время",
-    online_insurance_advantage_paragraph:
-      "Получение онлайн обязательного страхования экономит ваше время. Если вас беспокоят звонки от различных страховых агентов, вы можете приобрести онлайн обязательное автострахование с 1sigorta.az. Для этого вам понадобятся ваши личные данные, а именно - удостоверение личности, водительское удостоверение и технический паспорт. Затем вы сможете выбрать страховую компанию и оплатить сумму, предусмотренную для вашего обязательного автострахования. После оплаты страхового взноса ваше транспортное средство будет застраховано, и вы сможете спокойно управлять своим автомобилем.",
-    online_auto_insurance_advantage_heading: "Преимущества получения онлайн обязательного автострахования",
-    online_auto_insurance_advantage_paragraph:
-      "О преимуществах получения онлайн обязательного автострахования можно сказать, что штрафы в настоящее время фиксируются автоматическими камерами на дорогах. Учитывая это, вы должны постараться максимально вовремя получить новую страховку до истечения срока действия старой. Если обязательное страхование истекло, не управляйте транспортным средством, не обновив страховку. В настоящее время существует онлайн-страховая платформа 1sigorta.az, которая позволяет вам обновить обязательную страховку в нужный момент. С помощью сайта 1sigorta.az вы можете получить обязательное автострахование для своего автомобиля всего за 1 минуту и продолжить свой путь без проблем.",
-    isb_info_heading: "Что такое Бюро Обязательного Страхования (ИСБ)?",
-    isb_info_paragraph:
-      "Бюро Обязательного Страхования (ИСБ) было создано для обеспечения выполнения требований Закона об обязательных страхованиях. ИСБ обеспечивает защиту застрахованных, пострадавших и тех, кто причинил ущерб, а также стабильность и развитие системы обязательного страхования. Вы можете напрямую обратиться в ИСБ в случае возникновения каких-либо проблем. Бюро Обязательного Страхования зафиксирует ваш запрос, проведет расследование и окажет вам юридическую помощь.",
-    isb_activity_heading: "Чем занимается ИСБ аз?",
-    isb_activity_paragraph:
-      "Страховые компании объединились, чтобы создать и сформировать ИСБ аз, который выступает как государственный орган с контролирующей ролью, а также обладает полномочиями защищать общие интересы компаний.",
-    mandatory_insurance_benefits_heading: "Что вам дает Обязательное Страхование?",
-    mandatory_insurance_benefits_paragraph:
-      "Покупка Обязательного Страхования теперь полностью онлайн. Таким образом, вы получаете покрытие до 5000 AZN для вашего транспортного средства. Если произойдет авария, обязательное страхование покроет ущерб, нанесенный пострадавшей стороне, до 5000 манатов. Таким образом, вы получаете большую гарантию, заплатив небольшую сумму за обязательное страхование.",
-    insurance_calculator_heading: "Для чего нужен Калькулятор Обязательного Страхования?",
-    insurance_calculator_paragraph:
-      "Калькулятор Обязательного Страхования - это новый инструмент, используемый для проверки обязательного страхования онлайн. Этот калькулятор прост и удобен в использовании. Вы можете легко выполнить расчеты по обязательному страхованию с помощью калькулятора обязательного страхования.",
-    formTitle: "Напишите нам",
-    firstName: "Имя",
-    lastName: "Фамилия",
-    phoneNumber: "Номер",
-    emailName: "Эл. адрес",
-    message: "Сообщение",
-    submitButton: "Отправить",
-    first_name: "Имя",
-    last_name: "Фамилия",
-    father_name: "Отчество",
-    address_name: "Адрес",
-    birth_date: "Дата рождения",
-    phone_number: "Номер телефона",
-    gender: "Пол",
-    male: "Мужчина",
-    female: "Женщина",
-    terms_title: "Условия",
-    life_insurance_confirmation: "Страхование жизни подтверждает следующую информацию:",
-    no_medication: "За последние 12 месяцев я не принимал никаких лекарств на регулярной основе.",
-    no_treatment_last_5_years: "За последние 5 лет я лечился в больнице и в настоящее время не планирую никакого лечения.",
-    no_health_issues:
-      "За последние 5 лет у меня не было обнаружено и не лечилось ни одно из следующих состояний: эпилепсия, апноэ сна, головокружение, остеопороз, любые психические расстройства, потеря зрения или слуха.",
-    not_disabled: "В настоящее время я не являюсь инвалидом и не планирую подавать заявку на инвалидные пособия.",
-    no_dangerous_sports: "Я не занимаюсь никакими опасными или экстремальными видами спорта профессионально или любительски.",
-    confirm_button: "Подтверждаю!",
-    insurance_information: "Информация о страховании",
-    start_date: "Дата начала",
-    promo_code: "промо код",
-    express: "Экспресс",
-    express_plus: "Экспресс+",
-    express_plus_plus: "Экспресс++",
-    accidental_death: "Смерть в результате несчастного случая",
-    occupational_death: "Смерть в результате профессионального заболевания",
-    disability: "Инвалидность I/II группы (100%/75%)",
-    bodily_injury: "Телесные повреждения",
-    select_button: "Выбрать",
-    insurance_responsibility: "Какую ответственность несет страхование жизни?",
-    insurance_responsibility_text: `"Страхование жизни" предполагает, что страховщик обязуется выплатить бенефициару сумму, согласованную в договоре, если произойдет страховое событие, указанное в договоре, и застрахованный уплатит страховой взнос, согласованный в договоре. Если в страховом договоре не указано иное, период страхового покрытия начинается с двадцати четырех часов дня заключения страхового договора и заканчивается в двадцать четыре часа последнего дня действия страхового договора.`,
-    voluntary_insurance: "Добровольное страхование жизни",
-    voluntary_insurance_text: `"Страхование жизни" включает выплату страхового возмещения в случае смерти застрахованного от несчастного случая или болезни, полной или частичной утраты трудоспособности или получения иных травм, предусмотренных договором.`,
-    current_market_value: "Текущая рыночная стоимость",
-    engine_capacity: "Объем двигателя",
-    driving_experience: "Опыт вождения",
-    release_year: "Год выпуска",
-    kasko_protection: "Какие риски обычно покрывает каско страхование?",
-    kasko_protection_text: `При покупке каско страхования следует обратить внимание на предоставляемые гарантии. Потому что страховые покрытия каско могут меняться в зависимости от страховой компании и выбранного пакета страхования. Обычно каско страхование — это вид страхования, который защищает ваш автомобиль. То есть это страхование, созданное для покрытия ущерба, нанесенного вашему автомобилю в случае возникновения страхового случая. Однако помните, что нельзя путать обязательное страхование с каско. Обязательное страхование — это страхование вашей автогражданской ответственности и предназначено для покрытия расходов противоположной стороны в случае аварии. А каско страхование предназначено для покрытия ущерба, нанесенного вашему автомобилю в том же случае.`,
-    online_kasko_opportunity: "Не упустите возможность получить онлайн каско!",
-    online_kasko_opportunity_text: `Онлайн каско страхование полностью защищает ваш автомобиль. Для получения каско страховых пакетов мы предлагаем вам наиболее удобный способ — портал 1sigorta.az. Помимо пакета парковочного каско, вы также можете обратиться к нам за полными пакетами каско страхования.`,
-    kasko_pricing: "Определение стоимости каско страхования:",
-    kasko_pricing_text: `При покупке каско страхования страховые компании оценивают объем двигателя автомобиля, его реальную рыночную стоимость, состояние, марку и модель, чтобы определить стоимость. В этот процесс оценки также может быть включен ваш опыт вождения. Поскольку 1sigorta.az сотрудничает с различными страховыми компаниями, мы можем предложить вам наиболее подходящие пакеты каско страхования и каско страховые пакеты в различных форматах. Для этого достаточно связаться с нами. Мы можем предоставить вам предложения от таких компаний, как Paşa Sığorta, Atəşgah Sığorta, Bakı Sığorta, Xalq Sığorta и других в течение одного дня.`,
-    kasko_easy_purchase: "Покупка каско страхования стала еще проще!",
-    kasko_easy_purchase_text: `Для покупки каско страхования достаточно позвонить нам. Мы можем предложить вам самый выгодный пакет в кратчайшие сроки. Также мы можем предложить вам условия рассрочки для оплаты каско страхования.`,
-    brand: "Марка",
-    model: "Модель",
-    franchise: "Франшиза",
-    pasport: "Паспорт",
-    enter_travel_information: "Введите информацию о поездке",
-    start_of_trip: "Начало поездки",
-    end_of_trip: "Конец поездки",
-    template_days: "Шаблонные дни",
-    travel_zone_1: "Зона поездки",
-    travel_zone_2: "Цель поездки",
-    what_is_travel_insurance: "Что такое страхование путешествий?",
-    what_is_travel_insurance_text: `Страхование путешествий обеспечивает вас финансовой поддержкой, если вы столкнетесь с определенными проблемами во время путешествия или отпуска. Оно покрывает широкий спектр возможностей, от потери багажа до медицинских расходов в случае болезни или аварии. Очень важно знать, как это работает, почему это так важно и на что следует обращать внимание при его использовании.`,
-    what_does_travel_insurance_cover: "Что включает в себя страхование путешествий?",
-    what_does_travel_insurance_cover_text: `Путешествие без страховки может дорого обойтись, если что-то пойдет не так. В зависимости от ситуации страхование путешествий предлагает широкие возможности.<br />Включены следующие возможности:`,
-    what_travel_insurance_covers_list: `потерянные или украденные сумки (с добавлением покрытия багажа в некоторых условиях), медицинские расходы и срочные медицинские расходы, такие как доставка вас домой, расходы на отмену, задержку или сокращение вашего путешествия (страхование отмены иногда с дополнительной оплатой), проблемы, связанные с поездкой или проживанием, такие как задержки, отмены, юридические расходы в случае, если вас подали в суд за нанесение ущерба собственности или причинение вреда.`,
-    insurance_prices_research_text: `Существующие страховые тарифы будут значительно различаться между разными страховщиками и компаниями. Поэтому очень важно тщательно изучить вопрос и ознакомиться с правилами страхования путешествий перед покупкой.`,
-    online_travel_insurance_purchase: "Возможность покупки страхования путешествий онлайн",
-    online_travel_insurance_purchase_text: `"Страхование путешествий онлайн" - один из самых важных факторов для вашей безопасной поездки. Как вы знаете, в Европе, Америке и других развитых странах страховая система является важным аспектом для неприятных событий. Страхование путешествий защищает вас от возможных затрат в случае неприятных событий во время поездки. Таким образом, в случае происшествия, вы сможете легко получить первую помощь, направленную вашей страховой компанией, купившей страховку онлайн.`,
-    advantages_of_travel_insurance: "Преимущества покупки страхования путешествий",
-    advantages_of_travel_insurance_text: `" Покупка страхования путешествий" имеет множество преимуществ. Например, при поездке за границу для вас это один из самых важных документов. Купив страхование путешествий, вы защищаете себя. Таким образом, в случае любого происшествия вы освобождаетесь от дополнительных затрат. Кроме того, не забудьте, что страхование путешествий является одним из самых важных документов, необходимых для получения визы.`,
-    easy_online_travel_insurance_purchase: "Покупка страхования путешествий онлайн очень проста!",
-    easy_online_travel_insurance_purchase_text: `Покупка страхования путешествий онлайн с 1sigorta.az стала очень простой. Для этого просто введите свои личные данные, выберите диапазон и цель страхования путешествий, и вы сможете приобрести страхование путешествий онлайн у выбранной страховой компании.`,
-    steps_for_online_travel_insurance: "Шаги при покупке страхования путешествий онлайн",
-    steps_for_online_travel_insurance_text: `При покупке страхования путешествий онлайн вы сможете прочитать рейтинг и отзывы о соответствующей страховой компании, нажав на кнопки перед ней. Таким образом, вы будете уверены, от какой компании будет проще получить помощь в случае страхового происшествия в будущем. В связи с продолжающейся пандемией Covid-19 очень важно внимательно ознакомиться с условиями при покупке страхования. Некоторые посольства уже проверяют наличие этого пункта в вашем страховом договоре. Перед покупкой страхования путешествий вы также можете связаться с нашей службой поддержки клиентов для получения дополнительной информации. 1sigorta.az всегда готов помочь вам с покупкой страхования путешествий онлайн для визы.`,
-    travel_insurance_prices_section: "Цены на страхование путешествий",
-    travel_insurance_prices_section_text: `Цены на страхование путешествий могут варьироваться в зависимости от выбранного формата поездки. С 1sigorta.az вы сможете одновременно увидеть цены различных компаний по выбранному формату поездки. Это даст вам возможность легко увидеть, у какой компании можно приобрести страхование по более выгодной цене. Важно учитывать не только цены на страхование путешествий, но и рейтинг компании, у которой вы будете покупать страхование путешествий. Это важно, поскольку рейтинг показывает качество обслуживания компании в случае неприятных событий.`,
-    annual_travel_insurance: "Возможность покупки годового страхования путешествий",
-    annual_travel_insurance_text: `Для тех, кто хочет приобрести годовое страхование путешествий, нужно просто выполнить последовательные шаги на нашем сайте, как описано выше. Затем выберите коридор поездки, и вы сможете легко увидеть сумму, которую нужно заплатить за годовое страхование путешествий. Проанализируйте различия в ценах и рейтингах между компаниями и выберите наиболее подходящий вариант для себя. Покупка годового страхования путешествий с 1sigorta.az очень проста.`,
+    home: "Главная",
+    about: "О нас",
+    services: "Наши услуги",
+    gallery: "Галерея",
+    tours: "Туры",
+    contact: "Контакт",
+    language_az: "АЗ",
+    language_ru: "РУ",
+    language_en: "АН",
+    currency_azn: "AZН",
+    currency_usd: "USD",
+    currency_eur: "ЕВР",
   },
 };
 
@@ -443,23 +137,28 @@ function changeLanguage(language) {
     const key = element.getAttribute("data-key");
     element.innerHTML = translations[language][key];
   });
-  const params = new URLSearchParams(window.location.search);
-  const page = params.get("page");
-  updateContent(page, language);
+
+  // Dil seçimi göstermek için `x-text` güncelleniyor.
+  document.querySelectorAll("[x-text]").forEach((element) => {
+    const selectedLang = localStorage.getItem("selectedLanguage") || "AZ";
+    if (element.getAttribute("x-text") === "selected === '' ? 'AZ' : selected") {
+      element.textContent = selectedLang.toUpperCase();
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const selectedLanguage = localStorage.getItem("selectedLanguage") || "AZ"; // Varsayılan dil 'az'
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "az";
 
-  // Seçilen dili sayfaya uygula
   document.querySelectorAll("[data-key]").forEach((element) => {
     const key = element.getAttribute("data-key");
     element.innerHTML = translations[selectedLanguage][key];
   });
 
-  // Eğer bir dil seçilmişse, dil seçim menüsünü de güncelle
-  const selectedElement = document.querySelector("[x-text='selected === '' ? 'AZ' : selected']");
-  if (selectedElement) {
-    selectedElement.textContent = selectedLanguage.toUpperCase();
-  }
+  document.querySelectorAll("[x-text]").forEach((element) => {
+    const selectedLang = localStorage.getItem("selectedLanguage") || "AZ";
+    if (element.getAttribute("x-text") === "selected === '' ? 'AZ' : selected") {
+      element.textContent = selectedLang.toUpperCase();
+    }
+  });
 });

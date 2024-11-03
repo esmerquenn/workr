@@ -753,6 +753,10 @@ video {
   margin-bottom: 5rem;
 }
 
+.mt-\[10vh\] {
+  margin-top: 10vh;
+}
+
 .block {
   display: block;
 }
@@ -1643,6 +1647,10 @@ video {
     margin-right: 0.75rem;
   }
 
+  .md\:mt-\[16vh\] {
+    margin-top: 16vh;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1733,6 +1741,16 @@ video {
   .md\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .md\:px-28 {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+
+  .md\:px-24 {
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 
   .md\:text-2xl {
@@ -1933,6 +1951,11 @@ video {
   .xxl\:px-56 {
     padding-left: 14rem;
     padding-right: 14rem;
+  }
+
+  .xxl\:px-44 {
+    padding-left: 11rem;
+    padding-right: 11rem;
   }
 }
 

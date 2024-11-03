@@ -73,9 +73,11 @@
             <a class="logo_img block" href="/"><img class="w-[50%] h-full object-cover" src="assets/img/bg.png" alt="birS" /></a>
           </div>
           <div class="flex justify-center items-center">
-            <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
+            <!-- <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
               <li class="py-3 lg:p-0 flex justify-between items-center w-full md:block">
-                <a class="capitalize tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300" href="/">Əsas səhifə</a>
+                <a class="capitalize tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300" href="/" data-key="home"
+                  >Əsas səhifə</a
+                >
               </li>
               <li class="py-3 lg:p-0">
                 <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="about.html">Haqqımızda</a>
@@ -162,7 +164,126 @@
                   </div>
                 </div>
               </li>
+            </ul> -->
+            <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
+              <li class="py-3 lg:p-0 flex justify-between items-center w-full md:block">
+                <a class="capitalize whitespace-nowrap tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300" href="/" data-key="home"
+                  >Əsas səhifə</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="about.html"
+                  data-key="about"
+                  >Haqqımızda</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="servis.html"
+                  data-key="services"
+                  >Xidmətlərimiz</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="qalereya.html"
+                  data-key="gallery"
+                  >Qalereya</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300" href="tour.html" data-key="tours"
+                  >Turlar</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="contact.html"
+                  data-key="contact"
+                  >Əlaqə</a
+                >
+              </li>
+              <li>
+                <div class="flex items-center lg:justify-center uppercase">
+                  <div
+                    x-data="{ open: false, selected: localStorage.getItem('selectedLanguage') || 'AZ' }"
+                    @click.away="open = false"
+                    class="relative"
+                  >
+                    <button
+                      @click="open = !open"
+                      class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
+                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                    >
+                      <span
+                        class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
+                        x-text="selected === '' ? 'AZ' : selected"
+                      ></span>
+                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
+                    </button>
+                    <div
+                      x-show="open"
+                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                      x-cloak
+                    >
+                      <ul
+                        class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                      >
+                        <li @click="selected = 'AZ'; open = false;" onclick="changeLanguage('az')" data-key="language_az">AZ</li>
+                        <li @click="selected = 'RU'; open = false;" onclick="changeLanguage('ru')" data-key="language_ru">RU</li>
+                        <li @click="selected = 'EN'; open = false;" onclick="changeLanguage('en')" data-key="language_en">EN</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="hidden lg:block">
+                <div class="flex items-center justify-center uppercase">
+                  <div
+                    x-data="{ open: false, selected: localStorage.getItem('selectedCurrency') || 'AZN' }"
+                    @click.away="open = false"
+                    class="relative"
+                  >
+                    <button
+                      @click="open = !open"
+                      class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
+                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                    >
+                      <span
+                        class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
+                        x-text="selected === '' ? 'AZN' : selected"
+                      ></span>
+                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
+                    </button>
+                    <div
+                      x-show="open"
+                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                      x-cloak
+                    >
+                      <ul
+                        class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                      >
+                        <li @click="selected = 'AZN'; open = false;" onclick="changeCurrency('azn')" data-key="currency_azn">
+                          AZN
+                        </li>
+                        <li @click="selected = 'USD'; open = false;" onclick="changeCurrency('usd')" data-key="currency_usd">
+                          USD
+                        </li>
+                        <li @click="selected = 'EUR'; open = false;" onclick="changeCurrency('eur')" data-key="currency_eur">
+                          EUR
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
+
             <div class="lg:hidden mr-3">
               <div class="flex items-center justify-center uppercase">
                 <div
@@ -547,7 +668,10 @@
                   siyasətimizdə təsvir olunan digər məqsədlər üçün istifadə olunacaq
                 </p>
                 <div class="text-right">
-                  <button onclick="goToOrder()" class="py-2 w-44 lg:py-3 px-6 bg-[#FB3D27] text-base text-white rounded-full mt-8">
+                  <button
+                    onclick="goToOrder()"
+                    class="py-2 w-44 lg:py-3 px-6 bg-[#FB3D27] text-base text-white rounded-full mt-8"
+                  >
                     Sifarişi təsdiqlə <i class="fa-solid fa-chevron-right"></i>
                   </button>
                 </div>
@@ -793,6 +917,8 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/data.js"></script>
+    <script src="js/translate.js"></script>
+
     <script src="js/swiper.js"></script>
     <script src="js/owl.js"></script>
     <script src="js/nav.js"></script>
