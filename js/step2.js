@@ -27,22 +27,27 @@ cars.forEach((car) => {
       <button
         onclick="getCarInfo('${car.vehicle_id}')"
         id="${car.vehicle_id}"
+        
         class=" btn_card py-2 w-full lg:py-3 px-6 border-2 border-[#FB3D27] hover:bg-[#FB3D27] duration-300 transition text-base hover:text-white rounded-full"
       >
-        Seçim et
+       <b data-key="select"> Seçim et</b>
       </button>
     </div>`;
   vehicle_box.innerHTML += cardHTML;
 });
 
 function getCarInfo(id) {
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "az";
+  let selected = translations[selectedLanguage][`selected`] || "";
+
   document.querySelectorAll(".btn_card").forEach((button) => {
-    button.innerHTML = "Seçim et";
+    let data = translations[selectedLanguage][`select`] || "";
+    button.innerHTML = `<b data-key='select'>${data}</b>`;
     button.classList.remove("btn_active");
   });
 
   let selectedButton = document.getElementById(id);
-  selectedButton.innerHTML = `<b>Seçildi</b> <i class="fa-regular fa-circle-check"></i>`;
+  selectedButton.innerHTML = `<b data-key="selected">${selected}</b> <i class="fa-regular fa-circle-check"></i>`;
   selectedButton.classList.add("btn_active");
 
   let find_data = cars.find((item) => item.vehicle_id == id);
@@ -69,15 +74,15 @@ function validateInput(field, value) {
     case "name":
     case "surname":
       isValid = /^[A-Za-z]+$/.test(value);
-      errorMessage = isValid ? "" : "Yalnız harfler kullanılabilir.";
+      errorMessage = isValid ? "" : "x";
       break;
     case "email":
       isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-      errorMessage = isValid ? "" : "Geçerli bir e-posta adresi girin.";
+      errorMessage = isValid ? "" : "x";
       break;
     case "phone":
       isValid = /^\d{10}$/.test(value);
-      errorMessage = isValid ? "" : "Telefon numarası 10 haneli olmalıdır.";
+      errorMessage = isValid ? "" : "x";
       break;
     case "message":
       isValid = true;

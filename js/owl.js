@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
           class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
         />
         <h3 class="text-2xl tt font-semibold">${item.vehicle_name}</h3>
-        <p class="text-xl tt font-medium text-gray-500">Minivan</p>
+        <p class="text-xl tt font-medium text-gray-500">${item.vehicle_type}</p>
       </div>`;
   });
 

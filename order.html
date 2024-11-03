@@ -232,8 +232,8 @@
         <div class="flex justify-center items-center gap-6 my-12">
           <i class="fa-regular fa-circle-check text-6xl"></i>
           <span>
-            <h5 class="text-2xl font-semibold tt">Təşəkkür edirik!</h5>
-            <p class="text-base font-medium tt">Sifarişiniz qəbul olundu</p>
+            <h5 class="text-2xl font-semibold tt" data-key="thank_you">Təşəkkür edirik!</h5>
+            <p class="text-base font-medium tt" data-key="order_accepted">Sifarişiniz qəbul olundu</p>
           </span>
         </div>
 
@@ -241,22 +241,22 @@
           <div class="w-full md:w-1/4 order-2 md:order-1">
             <div class="p-6 bg-[#f9fafb] border">
               <div class="space-y-3 text-sm">
-                <h2 class="text-xl tt font-medium">Sürüş detalları a</h2>
+                <h2 data-key="ride_details" class="text-xl tt font-medium">Sürüş detalları</h2>
 
                 <div class="border-b-2 border-[#84909A] pb-2 m-0">
-                  <p class="font-medium text-base tt">Ad</p>
+                  <p data-key="name_label" class="font-medium text-base tt">Ad</p>
                   <p id="name_detail" class="font-normal text-sm">Yusif</p>
                 </div>
                 <div class="border-b-2 border-[#84909A] py-1 m-0">
-                  <p class="font-medium text-base tt">Soyad</p>
+                  <p data-key="surname_label" class="font-medium text-base tt">Soyad</p>
                   <p id="surname_detail" class="font-normal text-sm">Rzayev</p>
                 </div>
                 <div class="border-b-2 border-[#84909A] py-1">
-                  <p class="font-medium text-base tt">E-mail ünvanı</p>
-                  <p id="email_detail" class="font-normal text-sm">user"gmail.com</p>
+                  <p data-key="email_label" class="font-medium text-base tt">E-mail ünvanı</p>
+                  <p id="email_detail" class="font-normal text-sm">user@gmail.com</p>
                 </div>
-                <div class="border-b-2 border-[#84909A] py-41">
-                  <p class="font-medium text-base tt">Telefon</p>
+                <div class="border-b-2 border-[#84909A] py-4">
+                  <p data-key="phone_label" class="font-medium text-base tt">Telefon</p>
                   <p id="tel_detail" class="font-normal text-sm">+994503344549</p>
                 </div>
               </div>
@@ -267,12 +267,12 @@
           <div class="md:w-2/4 order-1 md:order-2">
             <div class="last_card card p-5 bg-[#f9fafb] border"></div>
             <div class="mt-10 border-t border-gray-300 pt-10 flex justify-between items-center">
-              <p class="text-xl font-medium">Ümumi</p>
+              <p class="text-xl font-medium" data-key="total_label">Ümumi</p>
               <p id="total_amount-3" class="text-xl font-medium">00.00 ₼</p>
             </div>
           </div>
         </div>
-     </section>
+      </section>
     </main>
 
     <footer class="py-6 md:py-24 px-4 md:px-16 xxl:px-40 bg-[#F9FAFB] dark:bg-gray-800 dark:text-gray-100">
@@ -334,38 +334,39 @@
       surname.innerHTML = info.surname;
       email.innerHTML = info.email;
       tel.innerHTML = info.phone;
+
       teferruat3.innerHTML = `<div class="p-6 bg-[#f9fafb] border">
                 <div class="space-y-3 text-sm">
                   <div class="py-1">
                     <div id="map_little" class="w-full h-32 z-10 mb-0 pb-0"></div>
                   </div>
-                  <h2 class="text-xl tt font-medium">Sürüş detalları</h2>
+                  <h2 class="text-xl tt font-medium" data-key="ride_details_title">Sürüş detalları</h2>
 
                   <div class="border-b-2 border-[#84909A] pb-2 m-0">
-                    <p class="font-medium text-base tt">Servis tipi</p>
-                    <p class="font-normal text-sm">Standart qiymət</p>
+                    <p class="font-medium text-base tt"  data-key="service_type">Servis tipi</p>
+                    <p class="font-normal text-sm" data-key="standard_price">Standart qiymət</p>
                   </div>
                   <div class="border-b-2 border-[#84909A] py-1 m-0">
-                    <p class="font-medium text-base tt">Transfer tipi</p>
-                    <p>Bir istiqamət</p>
+                    <p class="font-medium text-base tt" data-key="transfer_type">Transfer tipi</p>
+                    <p data-key="one_way">Bir istiqamət</p>
                   </div>
                   <div class="border-b-2 border-[#84909A] py-1">
-                    <p class="font-medium text-base tt">Marşrut</p>
+                    <p class="font-medium text-base tt" data-key="route">Marşrut</p>
                     <p id="marshrut">Bakı - ${info.marshrut ? info.marshrut : "Şəhər mərkəzi"}</p>
                   </div>
                   <div class="border-b-2 border-[#84909A] py-41">
-                    <p class="font-medium text-base tt">Götürmə tarixi və zamanı</p>
+                    <p class="font-medium text-base tt" data-key="pickup_date_time">Götürmə tarixi və zamanı</p>
                     <p id="date_time">${info.pickup_date ? info.pickup_date : 15 / 10 / 2024}- ${
         info.pickup_time ? info.pickup_time : "20:00"
       }
                     </p>
                   </div>
                   <div class="border-b-2 border-[#84909A] py-1">
-                    <p class="font-medium text-base tt">Ümumi məsafə</p>
+                    <p class="font-medium text-base tt" data-key="total_distance">Ümumi məsafə</p>
                     <p id="total_distance">${info.total_distance ? info.total_distance : "25.5 km"}</p>
                   </div>
                   <div class="border-b-2 border-[#84909A] py-1">
-                    <p class="font-medium text-base tt">Ümumi vaxt</p>
+                    <p data-key="total_time" class="font-medium text-base tt">Ümumi vaxt</p>
                     <p id="total_time">${info.total_time ? formatTime(info.total_time) : "0 saat 32 deq"}</p>
                   </div>
                 </div>
