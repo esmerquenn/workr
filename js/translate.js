@@ -62,6 +62,35 @@ const translations = {
     privacy_note:
       "Sizin şəxsi məlumatlarınız sifarişinizi emal etmək, bu veb-saytda təcrübənizi dəstəkləmək və məxfilik siyasətimizdə təsvir olunan digər məqsədlər üçün istifadə olunacaq",
     confirm_order_button: "Sifarişi təsdiqlə",
+    step_0_button_next: "Avtomobili seçin <i class='fa-solid fa-chevron-right'></i>",
+    step_1_button_prev: "<i class='fa-solid fa-chevron-left'></i> Sürüş detallarını seçin",
+    step_1_button_next: "Əlaqə məlumatlarını daxil edin <i class='fa-solid fa-chevron-right'></i>",
+    step_2_button_prev: "<i class='fa-solid fa-chevron-left'></i> Avtomobili seçin",
+    step_2_button_next: "Sifariş detallatına baxın <i class='fa-solid fa-chevron-right'></i>",
+    step_3_button_prev: "<i class='fa-solid fa-chevron-left'></i> Əlaqə məlumatlarını daxil edin",
+    step_3_button_next: "İndi rezerv edin <i class='fa-solid fa-chevron-right'></i>",
+    intro_heading:
+      "LocalTransfer.com, rahat və etibarlı nəqliyyat həlləri təqdim edərək, istifadəçilərə səyahət prosesini asanlaşdırmaq məqsədilə qurulmuşdur.",
+    intro_description:
+      "Peşəkar sürücülərimiz və geniş avtomobil parkımızla yüksək keyfiyyətli xidmət və fərdiləşdirilmiş marşrutlar təklif edirik. Azərbaycanın gözəlliklərini kəşf etmək üçün bizimlə səyahət edin!",
+    service_airport: "Hava Limanı Transferləri",
+    service_vip: "VIP köçürmələr",
+    service_rental: "Sürücü ilə avtomobil icarəsi",
+    service_excursion: "İstəyinizə uyğun olaraq istənilən istiqamətə ekskursiyalar",
+    service_tours: "Turlar",
+    learn_more: "Ətraflı öyrən <i class='fa-solid fa-chevron-right'></i>",
+    car_list_title: "Təklif etdiyimiz avtomobillərin siyahısı",
+    partners_title: "Partnyorlarımız",
+    service_coverage: "Xidmətlərimizi Azərbaycanın hər bir bölgəsində təqdim edirik.",
+    comfort_reliability_title: "Rahatlıq və Etibar",
+    comfort_reliability_text:
+      "Xidmətlərimiz sayəsində səyahətiniz zamanı maksimum rahatlıq əldə edəcəksiniz. Avtomobilinizi asanlıqla bron edin və vaxtında təhvil alacağınıza əmin olun.",
+    customer_satisfaction_title: "Müştəri Məmnuniyyəti",
+    customer_satisfaction_text:
+      "Nəqliyyat sahəsindəki zəngin təcrübəmiz sayəsində, çoxsaylı məmnun müştəri və tərəfdaşlara sahibik. Bu da, peşəkar və keyfiyyətli xidmətlərimizin etibarlılığının ən yaxşı göstəricisidir.",
+    services_offered: "Sizə təklif edə biləcəyimiz xidmətlər",
+    airport_transfer: "Hava Limanı transferi",
+    find_on_map: "Bizi xəritədə tapın",
   },
   en: {
     home: "Home",
@@ -127,6 +156,35 @@ const translations = {
     privacy_note:
       "Your personal information will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.",
     confirm_order_button: "Confirm Order",
+    step_0_button_next: "Select Vehicle <i class='fa-solid fa-chevron-right'></i>",
+    step_1_button_prev: "<i class='fa-solid fa-chevron-left'></i> Select Ride Details",
+    step_1_button_next: "Enter Contact Details <i class='fa-solid fa-chevron-right'></i>",
+    step_2_button_prev: "<i class='fa-solid fa-chevron-left'></i> Select Vehicle",
+    step_2_button_next: "View Order Details <i class='fa-solid fa-chevron-right'></i>",
+    step_3_button_prev: "<i class='fa-solid fa-chevron-left'></i> Enter Contact Details",
+    step_3_button_next: "Reserve Now <i class='fa-solid fa-chevron-right'></i>",
+    intro_heading:
+      "LocalTransfer.com was established to simplify the travel process by providing convenient and reliable transportation solutions.",
+    intro_description:
+      "With our professional drivers and large fleet, we offer high-quality service and personalized routes. Travel with us to discover the beauty of Azerbaijan!",
+    service_airport: "Airport Transfers",
+    service_vip: "VIP Transfers",
+    service_rental: "Car Rental with Driver",
+    service_excursion: "Excursions to any direction as per your request",
+    service_tours: "Tours",
+    learn_more: "Learn More <i class='fa-solid fa-chevron-right'></i>",
+    car_list_title: "List of Cars We Offer",
+    partners_title: "Our Partners",
+    service_coverage: "We offer our services in every region of Azerbaijan.",
+    comfort_reliability_title: "Comfort and Reliability",
+    comfort_reliability_text:
+      "With our services, you will experience maximum comfort during your journey. Easily book your car and be assured that it will be delivered on time.",
+    customer_satisfaction_title: "Customer Satisfaction",
+    customer_satisfaction_text:
+      "Thanks to our rich experience in transportation, we have many satisfied customers and partners, which is the best indicator of our professional and quality services.",
+    services_offered: "Services We Can Offer You",
+    airport_transfer: "Airport Transfer",
+    find_on_map: "Find Us on the Map",
   },
   ru: {
     home: "Главная",
@@ -192,6 +250,36 @@ const translations = {
     privacy_note:
       "Ваши личные данные будут использованы для обработки вашего заказа, поддержки вашего опыта на этом сайте и для других целей, описанных в нашей политике конфиденциальности.",
     confirm_order_button: "Подтвердить заказ",
+    step_0_button_next: "Выберите транспорт <i class='fa-solid fa-chevron-right'></i>",
+    step_1_button_prev: "<i class='fa-solid fa-chevron-left'></i> Выберите детали поездки",
+    step_1_button_next: "Введите контактные данные <i class='fa-solid fa-chevron-right'></i>",
+    step_2_button_prev: "<i class='fa-solid fa-chevron-left'></i> Выберите транспорт",
+    step_2_button_next: "Просмотрите детали заказа <i class='fa-solid fa-chevron-right'></i>",
+    step_3_button_prev: "<i class='fa-solid fa-chevron-left'></i> Введите контактные данные",
+    step_3_button_next: "Забронировать сейчас <i class='fa-solid fa-chevron-right'></i>",
+    intro_heading:
+      "LocalTransfer.com создан для упрощения процесса путешествий, предлагая удобные и надежные транспортные решения.",
+    intro_description:
+      "С нашими профессиональными водителями и большим автопарком мы предлагаем качественное обслуживание и индивидуальные маршруты. Путешествуйте с нами, чтобы открыть для себя красоту Азербайджана!",
+    service_airport: "Трансферы из аэропорта",
+    service_vip: "VIP-трансферы",
+    service_rental: "Аренда автомобиля с водителем",
+    service_excursion: "Экскурсии по любому направлению на ваш выбор",
+    service_tours: "Туры",
+    learn_more: "Узнать больше <i class='fa-solid fa-chevron-right'></i>",
+    car_list_title: "Список предлагаемых автомобилей",
+    partners_title: "Наши партнеры",
+    service_coverage: "Мы предлагаем наши услуги в каждом регионе Азербайджана.",
+    comfort_reliability_title: "Комфорт и надежность",
+    comfort_reliability_text:
+      "Благодаря нашим услугам вы получите максимальный комфорт во время поездки. Легко бронируйте автомобиль и будьте уверены, что получите его вовремя.",
+    customer_satisfaction_title: "Удовлетворенность клиентов",
+    customer_satisfaction_text:
+      "Благодаря нашему богатому опыту в сфере транспорта, у нас много довольных клиентов и партнеров, что является лучшим показателем надежности наших профессиональных и качественных услуг.",
+    services_offered: "Услуги, которые мы можем вам предложить",
+    airport_transfer: "Трансфер в аэропорт",
+    find_on_map: "Найдите нас на карте",
+
   },
 };
 

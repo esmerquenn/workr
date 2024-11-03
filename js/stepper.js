@@ -138,26 +138,40 @@ dir_prev.onclick = function () {
   }
 };
 
+// function updateStep() {
+//   dir_prev.style.opacity = currentStep === 0 ? "0" : "1";
+//   dir_prev.innerHTML =
+//     currentStep == 1
+//       ? `<i class="fa-solid fa-chevron-left"></i> Sürüş detallarını seçin `
+//       : currentStep == 2
+//       ? `<i class="fa-solid fa-chevron-left"></i> Avtomobili seçin `
+//       : `<i class="fa-solid fa-chevron-left"></i> Əlaqə məlumatlarını daxil edin`;
+//   dir_next.innerHTML =
+//     currentStep == 0
+//       ? ` Avtomobili seçin <i class="fa-solid fa-chevron-right"></i>`
+//       : currentStep == 1
+//       ? ` Əlaqə məlumatlarını daxil edin <i class="fa-solid fa-chevron-right"></i>`
+//       : currentStep == 2
+//       ? `  Sifariş detallatına baxın <i class="fa-solid fa-chevron-right"></i>`
+//       : `  İndi rezerv edin <i class="fa-solid fa-chevron-right"></i>`;
+
+//   steps.forEach((item, index) => item.classList.toggle("step_active", index === currentStep));
+//   order_step.forEach((item) => (item.style.display = "none"));
+//   order_step.forEach((item, index) => item.classList.toggle("order_active", index === currentStep));
+//   setInfo();
+// }
+
 function updateStep() {
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "az";
+
   dir_prev.style.opacity = currentStep === 0 ? "0" : "1";
-  dir_prev.innerHTML =
-    currentStep == 1
-      ? `<i class="fa-solid fa-chevron-left"></i> Sürüş detallarını seçin `
-      : currentStep == 2
-      ? `<i class="fa-solid fa-chevron-left"></i> Avtomobili seçin `
-      : `<i class="fa-solid fa-chevron-left"></i> Əlaqə məlumatlarını daxil edin`;
-  dir_next.innerHTML =
-    currentStep == 0
-      ? ` Avtomobili seçin <i class="fa-solid fa-chevron-right"></i>`
-      : currentStep == 1
-      ? ` Əlaqə məlumatlarını daxil edin <i class="fa-solid fa-chevron-right"></i>`
-      : currentStep == 2
-      ? `  Sifariş detallatına baxın <i class="fa-solid fa-chevron-right"></i>`
-      : `  İndi rezerv edin <i class="fa-solid fa-chevron-right"></i>`;
+  dir_prev.innerHTML = translations[selectedLanguage][`step_${currentStep}_button_prev`] || "";
+  dir_next.innerHTML = translations[selectedLanguage][`step_${currentStep}_button_next`] || "";
 
   steps.forEach((item, index) => item.classList.toggle("step_active", index === currentStep));
   order_step.forEach((item) => (item.style.display = "none"));
   order_step.forEach((item, index) => item.classList.toggle("order_active", index === currentStep));
+
   setInfo();
 }
 
@@ -182,23 +196,23 @@ function setInfo() {
 
 function lastCardChoose(car) {
   last_card.innerHTML = `
-  <img
-  src=${car.img}
-  alt="Mercedes Vito"
-  class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
-/>
-<h3 class="text-2xl tt font-semibold">${car.vehicle_name}</h3>
-<div class="flex justify-between items-center my-3">
-  <span>
-    <span class="text-base text-[#84909A] font-medium pr-4 border-r border-[#84909a]"
-      ><i class="fa-solid fa-user-group text-xl mr-1"></i> ${last_personal_info.passenger}
-    </span>
-    <span class="text-base text-[#84909A] font-medium px-4"
-      ><i class="fa-solid fa-briefcase text-xl mr-1"></i> ${last_personal_info.bag}
-    </span>
-  </span>
-  <span class="text-xl font-medium tt text-[#84909a]">${car.price} ₼ </span>
-</div>`;
+      <img
+      src=${car.img}
+      alt="Mercedes Vito"
+      class="w-full h-auto mb-4 border shadow-md border-[#dddfe1] rounded-sm"
+    />
+    <h3 class="text-2xl tt font-semibold">${car.vehicle_name}</h3>
+    <div class="flex justify-between items-center my-3">
+      <span>
+        <span class="text-base text-[#84909A] font-medium pr-4 border-r border-[#84909a]"
+          ><i class="fa-solid fa-user-group text-xl mr-1"></i> ${last_personal_info.passenger}
+        </span>
+        <span class="text-base text-[#84909A] font-medium px-4"
+          ><i class="fa-solid fa-briefcase text-xl mr-1"></i> ${last_personal_info.bag}
+        </span>
+      </span>
+      <span class="text-xl font-medium tt text-[#84909a]">${car.price} ₼ </span>
+    </div>`;
 }
 
 function formatTime(minutes) {
@@ -222,8 +236,8 @@ transfer_type.onchange = function () {
 };
 
 function goToOrder() {
-  console.log(last_personal_info, 'last');
-  
-  localStorage.setItem( "info",JSON.stringify(last_personal_info));
-  window.location.href = "order.html"
+  console.log(last_personal_info, "last");
+
+  localStorage.setItem("info", JSON.stringify(last_personal_info));
+  window.location.href = "order.html";
 }
