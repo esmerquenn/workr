@@ -222,7 +222,7 @@
       </div>
     </header>
     <main>
-      <section class="py-5 px-4 md:px-24 xxl:px-44 my-6">
+      <!-- <section class="py-5 px-4 md:px-24 xxl:px-44 my-6">
         <div class="flex flex-col md:flex-row gap-4 mb-10">
           <div class="w-full md:w-1/2 flex flex-col">
             <label for="location" class="text-sm font-medium text-gray-600 mb-2">Ünvan</label>
@@ -238,6 +238,36 @@
               <option>Hamısı</option>
               <option>Hamısı</option>
               <option>Hamısı</option>
+            </select>
+          </div>
+        </div>
+        <div id="my_cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </section> -->
+
+      <section class="py-5 px-4 md:px-24 xxl:px-44 my-6">
+        <div class="flex flex-col md:flex-row gap-4 mb-10">
+          <div class="w-full md:w-1/2 flex flex-col">
+            <label for="location" class="text-sm font-medium text-gray-600 mb-2" data-key="address">Ünvan</label>
+            <select id="location" class="w-full px-2 py-3 border border-gray-300 focus:outline-none" >
+              <option data-key="location_all">Hamısı</option>
+              <option data-key="location_baku">Bakı</option>
+              <option data-key="location_ganja">Gəncə</option>
+              <option data-key="location_sumgait">Sumqayıt</option>
+              <option data-key="location_mingecevir">Mingəçevir</option>
+              <option data-key="location_lenkaran">Lənkəran</option>
+              <option data-key="location_shirvan">Şirvan</option>
+              <option data-key="location_gabala">Qəbələ</option>
+              <option data-key="location_agdam">Ağdam</option>
+              <option data-key="location_masalli">Masallı</option>
+              <option data-key="location_nakhchivan">Naxçıvan</option>
+            </select>
+          </div>
+          <div class="w-full md:w-1/2 flex flex-col">
+            <label for="category" class="text-sm font-medium text-gray-600 mb-2" data-key="category">Kateqoriya</label>
+            <select id="category" class="w-full px-2 py-3 border border-gray-300 focus:outline-none">
+              <option data-key="category_all">Hamısı</option>
+              <option data-key="category_option1">Kateqoriya 1</option>
+              <option data-key="category_option2">Kateqoriya 2</option>
             </select>
           </div>
         </div>
