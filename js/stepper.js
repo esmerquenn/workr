@@ -158,6 +158,10 @@ function updateStep() {
   steps.forEach((item, index) => item.classList.toggle("step_active", index === currentStep));
   order_step.forEach((item) => (item.style.display = "none"));
   order_step.forEach((item, index) => item.classList.toggle("order_active", index === currentStep));
+  setInfo();
+}
+
+function setInfo() {
   tefe(
     last_personal_info.marshrut,
     last_personal_info.pickup_date,
@@ -169,12 +173,11 @@ function updateStep() {
   amount1.innerHTML = amount;
   amount2.innerHTML = amount;
   amount3.innerHTML = amount;
-  console.log(amount3.innerHTML);
   name.innerHTML = last_personal_info.name;
   surname.innerHTML = last_personal_info.surname;
   email.innerHTML = last_personal_info.email;
   tel.innerHTML = last_personal_info.phone;
-  lastCardChoose(last_personal_info.vehicle)
+  lastCardChoose(last_personal_info.vehicle);
 }
 
 function lastCardChoose(car) {
@@ -217,3 +220,10 @@ function getTime() {
 transfer_type.onchange = function () {
   last_personal_info.transfer_type = transfer_type.value;
 };
+
+function goToOrder() {
+  console.log(last_personal_info, 'last');
+  
+  localStorage.setItem( "info",JSON.stringify(last_personal_info));
+  window.location.href = "order.html"
+}
