@@ -45,24 +45,52 @@
           <div class="flex justify-center items-center">
             <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
               <li class="py-3 lg:p-0 flex justify-between items-center w-full md:block">
-                <a class="capitalize tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300" href="/">Əsas səhifə</a>
+                <a
+                  class="capitalize whitespace-nowrap tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300"
+                  href="/"
+                  data-key="home"
+                  >Əsas səhifə</a
+                >
               </li>
               <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="about.html">Haqqımızda</a>
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="about.html"
+                  data-key="about"
+                  >Haqqımızda</a
+                >
               </li>
               <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="servis.html"
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="servis.html"
+                  data-key="services"
                   >Xidmətlərimiz</a
                 >
               </li>
               <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="qalereya.html">Qalereya</a>
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="qalereya.html"
+                  data-key="gallery"
+                  >Qalereya</a
+                >
               </li>
               <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="tour.html">Turlar</a>
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="tour.html"
+                  data-key="tours"
+                  >Turlar</a
+                >
               </li>
               <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="contact.html">Əlaqə</a>
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="contact.html"
+                  data-key="contact"
+                  >Əlaqə</a
+                >
               </li>
               <li>
                 <div class="flex items-center lg:justify-center uppercase">
@@ -90,9 +118,9 @@
                       <ul
                         class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
                       >
-                        <li @click="selected = 'AZ'; open = false;" value="1" onclick="changeLanguage('az')">AZ</li>
-                        <li @click="selected = 'RU'; open = false;" value="2" onclick="changeLanguage('ru')">RU</li>
-                        <li @click="selected = 'EN'; open = false;" value="3" onclick="changeLanguage('en')">EN</li>
+                        <li @click="selected = 'AZ'; open = false;" onclick="changeLanguage('az')" data-key="language_az">AZ</li>
+                        <li @click="selected = 'RU'; open = false;" onclick="changeLanguage('ru')" data-key="language_ru">RU</li>
+                        <li @click="selected = 'EN'; open = false;" onclick="changeLanguage('en')" data-key="language_en">EN</li>
                       </ul>
                     </div>
                   </div>
@@ -124,15 +152,22 @@
                       <ul
                         class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
                       >
-                        <li @click="selected = 'AZN'; open = false;" value="1" onclick="changeCurrency('azn')">AZN</li>
-                        <li @click="selected = 'USD'; open = false;" value="2" onclick="changeCurrency('usd')">USD</li>
-                        <li @click="selected = 'EUR'; open = false;" value="3" onclick="changeCurrency('eur')">EUR</li>
+                        <li @click="selected = 'AZN'; open = false;" onclick="changeCurrency('azn')" data-key="currency_azn">
+                          AZN
+                        </li>
+                        <li @click="selected = 'USD'; open = false;" onclick="changeCurrency('usd')" data-key="currency_usd">
+                          USD
+                        </li>
+                        <li @click="selected = 'EUR'; open = false;" onclick="changeCurrency('eur')" data-key="currency_eur">
+                          EUR
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </li>
             </ul>
+
             <div class="lg:hidden mr-3">
               <div class="flex items-center justify-center uppercase">
                 <div
@@ -179,15 +214,17 @@
         </div>
       </nav>
 
-      <div class=" mt-[10vh] md:mt-[16vh] bg-[#f9fafb] h-52 flex justify-center items-center flex-col">
-        <h1 class="text-lg md:text-5xl tt">Qalereya</h1>
-        <span class="text-sm font-normal tt mt-2">Əsas səhifə <i class="fa-solid fa-angle-right"></i> Qalereya</span>
+      <div class="mt-[16vh] bg-[#f9fafb] h-52 flex justify-center items-center flex-col">
+        <h1 class="text-lg md:text-5xl tt" data-key="tours">Haqqımızda</h1>
+        <span class="text-sm font-normal tt mt-2"
+          ><a data-key="home">Əsas səhifə</a> <i class="fa-solid fa-angle-right"></i> <a data-key="tours">Haqqımızda</a></span
+        >
       </div>
     </header>
     <main>
       <section class="py-5 px-4 md:px-24 xxl:px-44 my-6">
         <div class="flex flex-col md:flex-row gap-4 mb-10">
-          <div class=" w-full md:w-1/2 flex flex-col">
+          <div class="w-full md:w-1/2 flex flex-col">
             <label for="location" class="text-sm font-medium text-gray-600 mb-2">Ünvan</label>
             <select id="location" class="w-full px-2 py-3 border border-gray-300 focus:outline-none">
               <option>Hamısı</option>
@@ -211,7 +248,7 @@
     <footer class="py-6 md:py-24 px-4 md:px-16 xxl:px-40 bg-[#F9FAFB] dark:bg-gray-800 dark:text-gray-100">
       <div class="flex flex-col md:flex-row gap-12 md:gap-0">
         <div class="md:w-1/3 flex flex-col gap-6 md:gap-14">
-          <h4 class="tt text-xl">Əlaqə</h4>
+          <h4 class="tt text-xl" data-key="contact">Əlaqə</h4>
           <div class="flex flex-col justify-between gap-6">
             <a target="_blank" class="text-base tt text-[#201D1D]" href="https://maps.app.goo.gl/U2upLZTW6tzNGcbZ8">
               <i class="fa-solid fa-location-dot text-xl pr-2"></i>Baku Azərbaycan</a
@@ -220,12 +257,12 @@
               <i class="fa-solid fa-phone-volume text-base pr-2"></i>+994 55 234 45 73</a
             >
             <a target="_blank" class="text-base tt text-[#201D1D]" href="tel:+994552344573">
-              <i class="fa-solid fa-phone-volume text-base pr-2"></i>+994 55 234 45 73</a
+              <i class="fa-regular fa-envelope text-base pr-2"></i>-user@gmail.com</a
             >
           </div>
         </div>
         <div class="md:w-2/3 flex flex-col justify-between gap-6 md:gap-14">
-          <h4 class="tt text-xl">Bizi xəritədə tapın</h4>
+          <h4 class="tt text-xl" data-key="find_on_map">Bizi xəritədə tapın</h4>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194472.76853012154!2d49.690149090376366!3d40.39473700796155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2zQmFrw7w!5e0!3m2!1str!2saz!4v1730363842435!5m2!1str!2saz"
             width="100%"
@@ -248,6 +285,7 @@
 
     <script src="js/nav.js"></script>
     <script src="js/data.js"></script>
+    <script src="js/translate.js"></script>
     <script src="js/tour.js"></script>
     <script></script>
   </body>

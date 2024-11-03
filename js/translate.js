@@ -100,6 +100,8 @@ const translations = {
     reliable_guidance_desc: "Turunuzda sizə bələdçilik etmək üçün bilik və təcrübəmizə etibar edə bilərsiniz",
     premium_service: "Premium Xidmət",
     premium_service_desc: "Premium keyfiyyət və mükafat qazanan müştəri xidməti",
+    videos: "Videolar",
+    cars: "Maşınlar",
   },
   en: {
     home: "Home",
@@ -203,6 +205,8 @@ const translations = {
     reliable_guidance_desc: "You can rely on our knowledge and experience to guide you on your tour",
     premium_service: "Premium Service",
     premium_service_desc: "Premium quality and award-winning customer service",
+    videos: "Videos",
+    cars: "Cars",
   },
   ru: {
     home: "Главная",
@@ -306,6 +310,8 @@ const translations = {
     reliable_guidance_desc: "Вы можете положиться на наши знания и опыт, чтобы сопровождать вас в туре",
     premium_service: "Премиум-услуги",
     premium_service_desc: "Премиальное качество и отмеченное наградами обслуживание клиентов",
+    videos: "Видео",
+    cars: "Автомобили",
   },
 };
 

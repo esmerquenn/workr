@@ -49,98 +49,6 @@
             <a class="logo_img block" href="/"><img class="w-[50%] h-full object-cover" src="assets/img/bg.png" alt="birS" /></a>
           </div>
           <div class="flex justify-center items-center">
-            <!-- <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
-              <li class="py-3 lg:p-0 flex justify-between items-center w-full md:block">
-                <a class="capitalize tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300" href="/" data-key="home"
-                  >Əsas səhifə</a
-                >
-              </li>
-              <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="about.html">Haqqımızda</a>
-              </li>
-              <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="servis.html"
-                  >Xidmətlərimiz</a
-                >
-              </li>
-              <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="qalereya.html">Qalereya</a>
-              </li>
-              <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="tour.html">Turlar</a>
-              </li>
-              <li class="py-3 lg:p-0">
-                <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="contact.html">Əlaqə</a>
-              </li>
-              <li>
-                <div class="flex items-center lg:justify-center uppercase">
-                  <div
-                    x-data="{ open: false, selected: localStorage.getItem('selectedLanguage') || 'AZ' }"
-                    @click.away="open = false"
-                    class="relative"
-                  >
-                    <button
-                      @click="open = !open"
-                      class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
-                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
-                    >
-                      <span
-                        class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
-                        x-text="selected === '' ? 'AZ' : selected"
-                      ></span>
-                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
-                    </button>
-                    <div
-                      x-show="open"
-                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
-                      x-cloak
-                    >
-                      <ul
-                        class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
-                      >
-                        <li @click="selected = 'AZ'; open = false;" value="1" onclick="changeLanguage('az')">AZ</li>
-                        <li @click="selected = 'RU'; open = false;" value="2" onclick="changeLanguage('ru')">RU</li>
-                        <li @click="selected = 'EN'; open = false;" value="3" onclick="changeLanguage('en')">EN</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="hidden lg:block">
-                <div class="flex items-center justify-center uppercase">
-                  <div
-                    x-data="{ open: false, selected: localStorage.getItem('selectedCurrency') || 'AZN' }"
-                    @click.away="open = false"
-                    class="relative"
-                  >
-                    <button
-                      @click="open = !open"
-                      class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
-                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
-                    >
-                      <span
-                        class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
-                        x-text="selected === '' ? 'AZN' : selected"
-                      ></span>
-                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
-                    </button>
-                    <div
-                      x-show="open"
-                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
-                      x-cloak
-                    >
-                      <ul
-                        class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
-                      >
-                        <li @click="selected = 'AZN'; open = false;" value="1" onclick="changeCurrency('azn')">AZN</li>
-                        <li @click="selected = 'USD'; open = false;" value="2" onclick="changeCurrency('usd')">USD</li>
-                        <li @click="selected = 'EUR'; open = false;" value="3" onclick="changeCurrency('eur')">EUR</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul> -->
             <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
               <li class="py-3 lg:p-0 flex justify-between items-center w-full md:block">
                 <a
@@ -531,7 +439,7 @@
               <i class="fa-solid fa-phone-volume text-base pr-2"></i>+994 55 234 45 73</a
             >
             <a target="_blank" class="text-base tt text-[#201D1D]" href="tel:+994552344573">
-              <i class="fa-solid fa-phone-volume text-base pr-2"></i>+994 55 234 45 73</a
+              <i class="fa-regular fa-envelope text-base pr-2"></i>-user@gmail.com</a
             >
           </div>
         </div>
