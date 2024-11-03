@@ -49,9 +49,11 @@
             <a class="logo_img block" href="/"><img class="w-[50%] h-full object-cover" src="assets/img/bg.png" alt="birS" /></a>
           </div>
           <div class="flex justify-center items-center">
-            <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
+            <!-- <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
               <li class="py-3 lg:p-0 flex justify-between items-center w-full md:block">
-                <a class="capitalize tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300" href="/">Əsas səhifə</a>
+                <a class="capitalize tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300" href="/" data-key="home"
+                  >Əsas səhifə</a
+                >
               </li>
               <li class="py-3 lg:p-0">
                 <a class="capitalize tt text-base font-medium text-[#201D1D] dark:text-gray-300" href="about.html">Haqqımızda</a>
@@ -138,7 +140,132 @@
                   </div>
                 </div>
               </li>
+            </ul> -->
+            <ul class="hidden_dropdown lg:flex justify-between gap-8 dark:bg-gray-700 px-4 md:px-16 lg:px-0">
+              <li class="py-3 lg:p-0 flex justify-between items-center w-full md:block">
+                <a
+                  class="capitalize whitespace-nowrap tt text-base font-medium text-[rgb(32,29,29)] dark:text-gray-300"
+                  href="/"
+                  data-key="home"
+                  >Əsas səhifə</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="about.html"
+                  data-key="about"
+                  >Haqqımızda</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="servis.html"
+                  data-key="services"
+                  >Xidmətlərimiz</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="qalereya.html"
+                  data-key="gallery"
+                  >Qalereya</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="tour.html"
+                  data-key="tours"
+                  >Turlar</a
+                >
+              </li>
+              <li class="py-3 lg:p-0">
+                <a
+                  class="capitalize tt text-base whitespace-nowrap font-medium text-[#201D1D] dark:text-gray-300"
+                  href="contact.html"
+                  data-key="contact"
+                  >Əlaqə</a
+                >
+              </li>
+              <li>
+                <div class="flex items-center lg:justify-center uppercase">
+                  <div
+                    x-data="{ open: false, selected: localStorage.getItem('selectedLanguage') || 'AZ' }"
+                    @click.away="open = false"
+                    class="relative"
+                  >
+                    <button
+                      @click="open = !open"
+                      class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
+                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                    >
+                      <span
+                        class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
+                        x-text="selected === '' ? 'AZ' : selected"
+                      ></span>
+                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
+                    </button>
+                    <div
+                      x-show="open"
+                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                      x-cloak
+                    >
+                      <ul
+                        class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                      >
+                        <li @click="selected = 'AZ'; open = false;" onclick="changeLanguage('az')" data-key="language_az">AZ</li>
+                        <li @click="selected = 'RU'; open = false;" onclick="changeLanguage('ru')" data-key="language_ru">RU</li>
+                        <li @click="selected = 'EN'; open = false;" onclick="changeLanguage('en')" data-key="language_en">EN</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="hidden lg:block">
+                <div class="flex items-center justify-center uppercase">
+                  <div
+                    x-data="{ open: false, selected: localStorage.getItem('selectedCurrency') || 'AZN' }"
+                    @click.away="open = false"
+                    class="relative"
+                  >
+                    <button
+                      @click="open = !open"
+                      class="text-[#201D1D] rounded flex items-center justify-between dark:text-gray-300"
+                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                    >
+                      <span
+                        class="text-[#201D1D] text-base font-[500] overflow-hidden uppercase dark:text-gray-300"
+                        x-text="selected === '' ? 'AZN' : selected"
+                      ></span>
+                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-[#201D1D] dark:text-gray-300"></i>
+                    </button>
+                    <div
+                      x-show="open"
+                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                      x-cloak
+                    >
+                      <ul
+                        class="overflow-auto [&>li]:text-gray-500 [&>li]:px-[10px] [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                      >
+                        <li @click="selected = 'AZN'; open = false;" onclick="changeCurrency('azn')" data-key="currency_azn">
+                          AZN
+                        </li>
+                        <li @click="selected = 'USD'; open = false;" onclick="changeCurrency('usd')" data-key="currency_usd">
+                          USD
+                        </li>
+                        <li @click="selected = 'EUR'; open = false;" onclick="changeCurrency('eur')" data-key="currency_eur">
+                          EUR
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
+
             <div class="lg:hidden mr-3">
               <div class="flex items-center justify-center uppercase">
                 <div
@@ -186,8 +313,10 @@
       </nav>
 
       <div class="mt-[16vh] bg-[#f9fafb] h-52 flex justify-center items-center flex-col">
-        <h1 class="text-lg md:text-5xl tt">Haqqımızda</h1>
-        <span class="text-sm font-normal tt mt-2">Əsas səhifə <i class="fa-solid fa-angle-right"></i> Haqqımızda</span>
+        <h1 class="text-lg md:text-5xl tt" data-key="about">Haqqımızda</h1>
+        <span class="text-sm font-normal tt mt-2"
+          ><a data-key="home">Əsas səhifə</a> <i class="fa-solid fa-angle-right"></i> <a data-key="about">Haqqımızda</a></span
+        >
       </div>
     </header>
     <main>
@@ -243,7 +372,7 @@
         </div>
       </section>
 
-      <section class="py-3 px-4 md:px-16 xxl:px-40 my-12">
+      <!-- <section class="py-3 px-4 md:px-16 xxl:px-40 my-12">
         <h1 class="text-lg md:text-5xl tt text-center mb-16">Niyə biz?</h1>
         <div class="flex flex-col lg:flex-row gap-8 bg-white">
           <div class="grid grid-cols-1 xl:grid-cols-2 gap-2 flex-1 lg:order-2">
@@ -311,13 +440,89 @@
             </div>
           </div>
         </div>
+      </section> -->
+
+      <section class="py-3 px-4 md:px-16 xxl:px-40 my-12">
+        <h1 class="text-lg md:text-5xl tt text-center mb-16" data-key="why_us">Niyə biz?</h1>
+        <div class="flex flex-col lg:flex-row gap-8 bg-white">
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-2 flex-1 lg:order-2">
+            <div class="p-2">
+              <div
+                class="bg-[#fb3d27] mb-4 text-white text-xl font-normal tt text-center w-[50px] h-[50px] rounded-full flex justify-center items-center"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="font-semibold tt text-2xl mb-3" data-key="professional_drivers">Peşəkar Sürücülər</h3>
+                <p class="text-xl tt font-normal" data-key="professional_drivers_desc">
+                  Sürücülərimizin hər biri peşəkarlığı və punktuallığı ilə seçilir
+                </p>
+              </div>
+            </div>
+            <div class="p-2">
+              <div
+                class="bg-[#fb3d27] mb-4 text-white text-xl font-normal tt text-center w-[50px] h-[50px] rounded-full flex justify-center items-center"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="font-semibold tt text-2xl mb-3" data-key="safety">Təhlükəsizlik</h3>
+                <p class="text-xl tt font-normal" data-key="safety_desc">
+                  Müştərilərimizin təhlükəsizliyi bizim əsas prioritetimizdir
+                </p>
+              </div>
+            </div>
+            <div class="p-2">
+              <div
+                class="bg-[#fb3d27] mb-4 text-white text-xl font-normal tt text-center w-[50px] h-[50px] rounded-full flex justify-center items-center"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="font-semibold tt text-2xl mb-3" data-key="reliable_guidance">Etibarlı Bələdçilik</h3>
+                <p class="text-xl tt font-normal" data-key="reliable_guidance_desc">
+                  Turunuzda sizə bələdçilik etmək üçün bilik və təcrübəmizə etibar edə bilərsiniz
+                </p>
+              </div>
+            </div>
+            <div class="p-2">
+              <div
+                class="bg-[#fb3d27] mb-4 text-white text-center text-xl font-normal tt w-[50px] h-[50px] rounded-full flex justify-center items-center"
+              >
+                4
+              </div>
+              <div>
+                <h3 class="font-semibold tt text-2xl mb-3" data-key="premium_service">Premium Xidmət</h3>
+                <p class="text-xl tt font-normal" data-key="premium_service_desc">
+                  Premium keyfiyyət və mükafat qazanan müştəri xidməti
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-[55%] flex-1 grid sm:grid-cols-2 gap-4">
+            <div class="flex items-center justify-end">
+              <img
+                src="./assets/img/teklif.jpeg"
+                alt="Transfer image"
+                class="rounded-lg h-[360px] lg:h-[400px] max-w-[250px] lg:max-w-[200px] xl:max-w-[270px] mt-10 object-cover"
+              />
+            </div>
+            <div>
+              <img
+                src="./assets/img/aa.jpeg"
+                alt="Airport transfer"
+                class="rounded-md h-[360px] lg:h-[400px] max-w-[250px] lg:max-w-[200px] xl:max-w-[270px] object-cover text-right"
+              />
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="py-6 md:py-24 px-4 md:px-16 xxl:px-40 bg-[#F9FAFB] dark:bg-gray-800 dark:text-gray-100">
       <div class="flex flex-col md:flex-row gap-12 md:gap-0">
         <div class="md:w-1/3 flex flex-col gap-6 md:gap-14">
-          <h4 class="tt text-xl">Əlaqə</h4>
+          <h4 class="tt text-xl" data-key="contact">Əlaqə</h4>
           <div class="flex flex-col justify-between gap-6">
             <a target="_blank" class="text-base tt text-[#201D1D]" href="https://maps.app.goo.gl/U2upLZTW6tzNGcbZ8">
               <i class="fa-solid fa-location-dot text-xl pr-2"></i>Baku Azərbaycan</a
@@ -331,7 +536,7 @@
           </div>
         </div>
         <div class="md:w-2/3 flex flex-col justify-between gap-6 md:gap-14">
-          <h4 class="tt text-xl">Bizi xəritədə tapın</h4>
+          <h4 class="tt text-xl" data-key="find_on_map">Bizi xəritədə tapın</h4>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194472.76853012154!2d49.690149090376366!3d40.39473700796155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2zQmFrw7w!5e0!3m2!1str!2saz!4v1730363842435!5m2!1str!2saz"
             width="100%"
@@ -352,6 +557,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="js/nav.js"></script>
+    <script src="js/translate.js"></script>
   </body>
 </html>
 <!-- aaaa -->
